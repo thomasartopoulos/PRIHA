@@ -114,6 +114,22 @@
     .reveal.active { opacity: 1; transform: none; }
     .reveal.done { will-change: auto; }
 
+    /* ---------- Fotos del equipo ----------
+       Si hay foto se usa <img class="avatar">; si no, queda el circulo con iniciales.
+       Ver el README para el instructivo completo. */
+    .avatar {
+      width: 3.5rem; height: 3.5rem; border-radius: 9999px;
+      object-fit: cover; object-position: center top;
+      background: #f0ece6; display: block; margin-bottom: 1rem;
+    }
+    .avatar-iniciales {
+      width: 3.5rem; height: 3.5rem; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem; font-weight: 700; font-size: 1.05rem;
+      font-family: 'Oswald', sans-serif;
+      background: rgba(215,116,57,.15); color: #b85a22;
+    }
+
     /* ---------- Hover de tarjetas · verde salvia ---------- */
     .tarjeta { transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease, background-color .3s ease; }
     .tarjeta:hover, .tarjeta:focus-within {
@@ -301,7 +317,7 @@
               <button role="tab" id="tab-quienes" aria-controls="panel-quienes" aria-selected="false" tabindex="-1"
                       class="pestana shrink-0 text-left px-5 py-4 lg:py-5 border-b border-white/10 transition-colors hover:bg-white/10">
                 <span class="pestana-num rotulo block text-[10px] text-white/45 mb-1">Eje 03</span>
-                <span class="font-display font-medium text-base">Quiénes</span>
+                <span class="font-display font-medium text-base">Por qué lo hacemos</span>
               </button>
               <button role="tab" id="tab-medicion" aria-controls="panel-medicion" aria-selected="false" tabindex="-1"
                       class="pestana shrink-0 text-left px-5 py-4 lg:py-5 transition-colors hover:bg-white/10">
@@ -333,6 +349,7 @@
                   </div>
                 </div>
 
+                <p class="text-sm text-white/70 leading-relaxed mb-6 max-w-2xl">En cuanto a los titulares, el listado lo encabezan ciudadanos estadounidenses con más de 2,7 millones de hectáreas —más que toda la provincia de Tucumán—, seguidos por Italia y España. Solo esas tres nacionalidades concentran la mitad de la tierra extranjerizada del país. Los casos más conocidos anteceden a la ley: Lago Escondido, del británico Joe Lewis, y las tierras patagónicas del italiano Luciano Benetton, adquiridas durante los años noventa.</p>
                 <p class="border-l-2 border-salvia pl-4 text-sm text-white/70 leading-relaxed">Si ninguna provincia excede el límite, cabe preguntarse por qué se impulsa con tanta insistencia la derogación de la ley.</p>
               </div>
 
@@ -377,27 +394,29 @@
 
               <!-- EJE 03 -->
               <div role="tabpanel" id="panel-quienes" aria-labelledby="tab-quienes" tabindex="0" hidden class="panel">
-                <h3 class="text-2xl sm:text-3xl font-bold mb-2">Quiénes son los titulares</h3>
-                <p class="text-sm text-white/65 leading-relaxed mb-8 max-w-xl">Tres nacionalidades concentran la mitad de toda la tierra extranjerizada del país.</p>
+                <h3 class="text-2xl sm:text-3xl font-bold mb-2">Por qué sostenemos el Observatorio</h3>
+                <p class="text-sm text-white/65 leading-relaxed mb-8 max-w-2xl">La información sobre quién es dueño de la tierra en la Argentina existe, pero está dispersa, desactualizada y no se publica de forma que permita analizarla. El Observatorio nace para llenar ese vacío.</p>
 
-                <ul class="space-y-5 list-none p-0 mb-8">
-                  <li>
-                    <p class="flex justify-between items-baseline mb-1.5"><span class="font-semibold text-sm">Estados Unidos</span><span class="dato font-display text-xl text-naranja">2,7 M ha</span></p>
-                    <span class="block h-2.5 bg-white/10 rounded-full overflow-hidden"><span class="barra block h-full bg-naranja rounded-full" style="--w:100%"></span></span>
-                    <p class="text-xs text-white/50 mt-1.5">Más que toda la provincia de Tucumán</p>
-                  </li>
-                  <li>
-                    <p class="flex justify-between items-baseline mb-1.5"><span class="font-semibold text-sm">Italia</span><span class="dato font-display text-xl text-salvia">2.º puesto</span></p>
-                    <span class="block h-2.5 bg-white/10 rounded-full overflow-hidden"><span class="barra block h-full bg-salvia rounded-full" style="--w:62%"></span></span>
-                  </li>
-                  <li>
-                    <p class="flex justify-between items-baseline mb-1.5"><span class="font-semibold text-sm">España</span><span class="dato font-display text-xl text-salvia">3.º puesto</span></p>
-                    <span class="block h-2.5 bg-white/10 rounded-full overflow-hidden"><span class="barra block h-full bg-salvia rounded-full" style="--w:48%"></span></span>
-                  </li>
-                </ul>
+                <div class="space-y-7 mb-8 max-w-2xl">
+                  <div class="border-l-2 border-salvia pl-5">
+                    <h4 class="font-display text-lg mb-1.5">Producir el dato que no está</h4>
+                    <p class="text-sm text-white/70 leading-relaxed">Cada cifra que publicamos se pide formalmente al Estado por la Ley de Acceso a la Información Pública, se ordena y se georreferencia. Es un trabajo lento que ninguna institución estaba haciendo de manera sistemática.</p>
+                  </div>
+                  <div class="border-l-2 border-salvia pl-5">
+                    <h4 class="font-display text-lg mb-1.5">Bajar la escala</h4>
+                    <p class="text-sm text-white/70 leading-relaxed">Un promedio nacional puede ocultar exactamente aquello que hay que discutir. Recién al mirar departamento por departamento, y al cruzar esa información con el agua, los minerales y las fronteras, el fenómeno se vuelve visible.</p>
+                  </div>
+                  <div class="border-l-2 border-salvia pl-5">
+                    <h4 class="font-display text-lg mb-1.5">Poner los datos a disposición</h4>
+                    <p class="text-sm text-white/70 leading-relaxed">Publicamos todo en abierto para que organizaciones sociales, sindicatos, periodistas, docentes y legisladores puedan usarlo. Un dato que se queda en el ámbito académico no cumple su función.</p>
+                  </div>
+                  <div class="border-l-2 border-salvia pl-5">
+                    <h4 class="font-display text-lg mb-1.5">Discutir con evidencia</h4>
+                    <p class="text-sm text-white/70 leading-relaxed">La disputa por la tierra suele darse con afirmaciones generales y pocos números verificables. Sostener una base pública, citada y trazable cambia los términos de esa discusión.</p>
+                  </div>
+                </div>
 
-                <p class="text-xs text-white/45 mb-5">Las barras de Italia y España son ilustrativas del orden de posiciones; falta cargar sus superficies exactas.</p>
-                <p class="border-l-2 border-salvia pl-4 text-sm text-white/70 leading-relaxed">Los casos más conocidos anteceden a la ley: Lago Escondido en Río Negro, del magnate británico Joe Lewis, y las tierras patagónicas del italiano Luciano Benetton, ambas adquiridas durante los años noventa.</p>
+                <p class="text-sm text-white/70 leading-relaxed max-w-2xl">Es un trabajo colectivo del PRIHA junto al Mirador Interdisciplinario Latinoamericano de Políticas Agrarias, que combina investigación histórica, análisis de normativa y Sistemas de Información Geográfica.</p>
               </div>
 
               <!-- EJE 04 -->
@@ -590,42 +609,54 @@
 
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0">
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">PV</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">PV</p>
             <h4 class="font-bold text-lg">Pablo Volkind</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Director del PRIHA · Investigador UBA/CLACSO</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Profesor de grado y posgrado FCE / FFyL (UBA). Coordinador del GT CLACSO «Historias Agrarias».</p>
             <a href="mailto:pvolkind@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> pvolkind@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">MO</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">MO</p>
             <h4 class="font-bold text-lg">Matías Oberlin Molina</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Dr. en Historia · Becario posdoctoral CONICET</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Docente en UNPAZ y en el Profesorado de Historia Alicia Moreau de Justo.</p>
             <a href="mailto:matiasoberlin@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> matiasoberlin@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">GE</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">GE</p>
             <h4 class="font-bold text-lg">Gabriela Elias</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Profesora de Historia (FFyL-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Integrante del Observatorio de Tierras (PRIHA-UBA).</p>
             <a href="mailto:profegabrielaelias@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> profegabrielaelias@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">MI</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">MI</p>
             <h4 class="font-bold text-lg">Maia Sol Ilutovich</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Maestranda en Historia Económica (FCE-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Profesora en Historia (ISP-JVG) e integrante del Observatorio de Tierras.</p>
             <a href="mailto:maiailutovich15@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> maiailutovich15@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">MM</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">MM</p>
             <h4 class="font-bold text-lg">Micaela Medero Larrosa</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Prof. de Educación Superior en Historia</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Licenciatura en Historia Latinoamericana en curso (UNDAV). Docente de nivel medio.</p>
             <a href="mailto:micaelamederol@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> micaelamederol@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="font-display w-12 h-12 bg-naranja/15 text-ladrillo rounded-full flex items-center justify-center font-bold text-lg mb-4">TA</p>
+            <!-- Para poner la foto, reemplazá el <p> de abajo por:
+                 <img class="avatar" src="equipo/NOMBRE.jpg" alt="" width="112" height="112" loading="lazy" decoding="async"> -->
+            <p aria-hidden="true" class="avatar-iniciales">TA</p>
             <h4 class="font-bold text-lg">Thomas Artopoulos</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Profesor de Historia (FFyL-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Especialista en geografía histórica y Sistemas de Información Geográfica (GIS).</p>
@@ -696,7 +727,6 @@
     </section>
 
     <!-- ============ PUBLICACIONES ============ -->
-    <!-- TODO: reemplazar cada href="#" por el DOI o la URL del articulo -->
     <section id="publicaciones" aria-labelledby="h-publicaciones" class="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Marcas de ganado: el registro de propiedad pecuaria, contracara del catastro -->
       <div aria-hidden="true" class="absolute inset-0 textura-marcas opacity-[0.07]"></div>
@@ -713,7 +743,7 @@
               <h3 class="font-bold text-base sm:text-lg leading-snug">El secreto de la competitividad argentina: condiciones de vida y trabajo de los obreros rurales pampeanos (1880-1914)</h3>
               <p class="text-sm text-tinta/60 mt-1">Volkind, Pablo</p>
             </div>
-            <a href="https://periodicos.ufsc.br/index.php/mundosdotrabalho/article/view/107637/60796" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+            <a href="https://periodicos.ufsc.br/index.php/mundosdotrabalho/article/view/107637/60796" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
               Leer artículo<span class="sr-only">: El secreto de la competitividad argentina</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
@@ -723,7 +753,7 @@
               <h3 class="font-bold text-base sm:text-lg leading-snug">Guerra Fría y reforma agraria en América Latina. Una agenda pendiente</h3>
               <p class="text-sm text-tinta/60 mt-1">Oberlin Molina, Matías</p>
             </div>
-            <a href="https://www.academia.edu/143852273/Guerra_Fr%C3%ADa_y_reforma_agraria_en_Am%C3%A9rica_Latina_Una_agenda_pendiente" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+            <a href="https://www.academia.edu/143852273/Guerra_Fr%C3%ADa_y_reforma_agraria_en_Am%C3%A9rica_Latina_Una_agenda_pendiente" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
               Leer artículo<span class="sr-only">: Guerra Fría y reforma agraria en América Latina</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
@@ -733,7 +763,7 @@
               <h3 class="font-bold text-base sm:text-lg leading-snug">En busca de la productividad y la libertad de mercado: políticas hacia el sector agropecuario posperonista (1955-1958)</h3>
               <p class="text-sm text-tinta/60 mt-1">Volkind, Pablo</p>
             </div>
-            <a href="https://ojs.economicas.uba.ar/H-ind/article/view/3490/4680" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+            <a href="https://ojs.economicas.uba.ar/H-ind/article/view/3490/4680" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
               Leer artículo<span class="sr-only">: En busca de la productividad y la libertad de mercado</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
@@ -743,7 +773,7 @@
               <h3 class="font-bold text-base sm:text-lg leading-snug">Tejiendo identidad: recuperando la historia de las mujeres de Puan. Memoria colectiva y Educación Sexual Integral</h3>
               <p class="text-sm text-tinta/60 mt-1">Trilhe, E. e Ilutovich, M.</p>
             </div>
-            <a href="https://www.academia.edu/145672086/Tejiendo_identidad_Recuperando_la_historia_de_las_mujeres_de_Puan_Una_experiencia_de_investigaci%C3%B3n_y_la_construcci%C3%B3n_de_la_memoria_colectiva_desde_la_Educaci%C3%B3n_Sexual_Integral_ESI_" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+            <a href="https://www.academia.edu/145672086/Tejiendo_identidad_Recuperando_la_historia_de_las_mujeres_de_Puan_Una_experiencia_de_investigaci%C3%B3n_y_la_construcci%C3%B3n_de_la_memoria_colectiva_desde_la_Educaci%C3%B3n_Sexual_Integral_ESI_" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
               Leer artículo<span class="sr-only">: Tejiendo identidad</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
