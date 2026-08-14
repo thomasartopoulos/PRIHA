@@ -1,0 +1,8 @@
+# Normaliza finales de linea: LF en el repo, sin diffs fantasma desde Windows
+* text=auto eol=lf
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.pdf binary
+*.geojson text eol=lf
