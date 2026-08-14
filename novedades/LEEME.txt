@@ -1,0 +1,9 @@
+Imagenes de las tarjetas de Novedades. Nombres exactos que espera index.html:
+
+  senado-2026.jpg          -> 4.o informe en el Senado
+  encuentro-unq.jpg        -> Encuentro "Territorio en Dialogo" (UNQ)
+  congreso-montevideo.jpg  -> VIII Congreso Latinoamericano de Historia Economica
+  publicacion-mundos.jpg   -> Articulo sobre obreros rurales pampeanos
+
+Proporcion recomendada 124:100 (ej. 744x600 px). Si falta alguna,
+la tarjeta muestra un icono gris en lugar de una imagen rota.
