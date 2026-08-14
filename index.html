@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="PRIHA · FCE-UBA">
   <meta property="og:title" content="PRIHA · Programa de Investigaciones sobre Historia Agraria">
   <meta property="og:description" content="Estudiamos las transformaciones del mundo rural argentino y latinoamericano. Observatorio de Tierras, publicaciones y actividades.">
-  <meta property="og:image" content="https://thomasartopoulos.github.io/PRIHA/og-priha.jpg">
+  <meta property="og:image" content="https://thomasartopoulos.github.io/PRIHA/img/og-priha.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="PRIHA · Programa de Investigaciones sobre Historia Agraria · FCE-UBA">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@priha_fce">
 
-  <link rel="icon" href="logo_priha.jpg" type="image/jpeg">
+  <link rel="icon" href="img/logo_priha.jpg" type="image/jpeg">
   <meta name="theme-color" content="#262425">
 
   <!-- Oswald: grotesca condensada, misma familia visual que el logotipo PRIHA
@@ -221,6 +221,14 @@
     #nov-modal.visible #nov-modal-fondo { opacity: 1; }
     #nov-modal.visible > div:last-child { opacity: 1; transform: none; }
 
+    /* Explorador de todas las novedades: mismo patron de apertura que el modal */
+    #nov-todas.abierto { display: flex; }
+    #nov-todas #nov-todas-fondo { opacity: 0; transition: opacity .25s ease; }
+    #nov-todas > div:last-child { opacity: 0; transform: translateY(12px) scale(.98); transition: opacity .25s ease, transform .25s ease; }
+    #nov-todas.visible #nov-todas-fondo { opacity: 1; }
+    #nov-todas.visible > div:last-child { opacity: 1; transform: none; }
+    .nt-chip.activo { background: #262425; color: #fff; border-color: #262425; }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .reveal { opacity: 1; transform: none; transition: none; }
@@ -252,7 +260,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
       <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
          class="flex items-center gap-3 group">
-        <img src="logo_fce.png" alt="" aria-hidden="true" width="640" height="371" decoding="async"
+        <img src="img/logo_fce.png" alt="" aria-hidden="true" width="640" height="371" decoding="async"
              class="h-7 w-auto shrink-0 object-contain">
         <span class="rotulo text-[10px] sm:text-xs text-white/75 group-hover:text-naranja transition-colors leading-tight">
           Universidad de Buenos Aires<span class="hidden sm:inline"> &middot; </span><br class="sm:hidden">Facultad de Ciencias Econ&oacute;micas
@@ -277,14 +285,14 @@
            La franja de arriba lo sostiene en todos los tamaños. -->
       <div class="flex items-center gap-3 sm:gap-4 shrink-0">
         <a href="#" aria-label="PRIHA · volver al inicio">
-          <img src="logo_priha.jpg" alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
+          <img src="img/logo_priha.jpg" alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
                width="1200" height="270" decoding="async"
                class="h-8 sm:h-10 w-auto object-contain">
         </a>
         <span aria-hidden="true" class="hidden sm:block xl:hidden 2xl:block w-px h-9 bg-linea"></span>
         <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
            class="hidden sm:block xl:hidden 2xl:block hover:opacity-75 transition-opacity">
-          <img src="logo_fce.png" alt="Facultad de Ciencias Económicas · UBA (se abre en una pestaña nueva)"
+          <img src="img/logo_fce.png" alt="Facultad de Ciencias Económicas · UBA (se abre en una pestaña nueva)"
                width="640" height="371" decoding="async"
                class="h-8 lg:h-9 w-auto object-contain">
         </a>
@@ -305,9 +313,12 @@
         <a href="#contacto" class="bg-tinta text-white px-5 py-2 rounded-full hover:bg-ladrillo transition-colors active:scale-95">Contacto</a>
       </nav>
 
+      <!-- El icono solo no alcanzaba: con la palabra al lado se entiende que ahi
+           esta la navegacion. El texto cambia a "Cerrar" cuando el menu se abre. -->
       <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu"
-              class="xl:hidden p-2 text-2xl rounded-lg hover:bg-hueso active:scale-90 transition-transform">
-        <i id="menu-icon" class="fa-solid fa-bars" aria-hidden="true"></i><span class="sr-only">Abrir menú de navegación</span>
+              class="xl:hidden shrink-0 flex items-center gap-2 pl-3 pr-4 py-2 rounded-xl border border-linea bg-white hover:bg-hueso hover:border-ladrillo active:scale-95 transition-all">
+        <i id="menu-icon" class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+        <span id="menu-texto" class="rotulo text-xs">Menú</span>
       </button>
     </div>
 
@@ -347,11 +358,11 @@
                la horizontal, la bajada "PROGRAMA DE INVESTIGACIONES SOBRE HISTORIA
                AGRARIA" quedaria en 6 px y no se leeria) y la horizontal de sm hacia
                arriba. Solo una se descarga: la otra queda con display:none. -->
-          <img src="logo_priha_blanco_apilado.png"
+          <img src="img/logo_priha_blanco_apilado.png"
                alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
                width="900" height="618" fetchpriority="high" decoding="async"
                class="sm:hidden w-full max-w-[17rem] h-auto mx-auto">
-          <img src="logo_priha_blanco.png" alt="" aria-hidden="true"
+          <img src="img/logo_priha_blanco.png" alt="" aria-hidden="true"
                width="1600" height="216" fetchpriority="high" decoding="async"
                class="hidden sm:block w-full max-w-xl lg:max-w-3xl h-auto mx-auto">
         </h1>
@@ -380,6 +391,12 @@
             <h2 id="h-novedades" class="text-3xl sm:text-4xl font-bold">Novedades</h2>
           </div>
           <div class="flex items-center gap-2">
+            <button type="button" id="nov-ver-todas"
+                    class="rotulo text-xs h-10 px-4 rounded-full bg-tinta text-white hover:bg-ladrillo active:scale-95 transition-all flex items-center gap-2 mr-1"
+                    aria-haspopup="dialog">
+              <i class="fa-solid fa-table-cells-large text-xs" aria-hidden="true"></i>
+              <span class="hidden sm:inline">Mostrar todas las novedades</span><span class="sm:hidden">Ver todas</span>
+            </button>
             <button type="button" id="nov-prev" class="w-10 h-10 rounded-full border border-linea bg-white hover:bg-hueso hover:border-ladrillo transition-colors flex items-center justify-center" aria-label="Novedad anterior">
               <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
             </button>
@@ -394,7 +411,7 @@
           <div id="nov-pista" class="flex gap-6 pb-2">
             <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="0">
               <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="novedades/senado-2026.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="img/novedades/senado-2026.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
               </button>
               <div class="p-5 flex flex-col flex-1">
@@ -406,7 +423,7 @@
             </article>
             <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="1">
               <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="novedades/encuentro-unq.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="img/novedades/encuentro-unq.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
               </button>
               <div class="p-5 flex flex-col flex-1">
@@ -418,7 +435,7 @@
             </article>
             <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="2">
               <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="novedades/congreso-montevideo.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="img/novedades/congreso-montevideo.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
               </button>
               <div class="p-5 flex flex-col flex-1">
@@ -430,7 +447,7 @@
             </article>
             <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="3">
               <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="novedades/publicacion-mundos.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="img/novedades/publicacion-mundos.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
               </button>
               <div class="p-5 flex flex-col flex-1">
@@ -446,9 +463,51 @@
     </section>
 
     <!-- Datos de las novedades para el popup (mismo orden que las tarjetas) -->
-    <script type="application/json" id="nov-datos">[{"cat": "Institucional", "fecha": "23/04/2026", "img": "novedades/senado-2026.jpg", "titulo": "El Observatorio de Tierras presentó su 4.° informe en el Senado", "cuerpo": "<p>El Observatorio de Tierras del PRIHA presentó su cuarto informe en el marco del debate en comisiones del Senado de la Nación sobre el proyecto de ley de propiedad privada y extranjerización de tierras.</p><p>El informe actualiza el relevamiento de la superficie en manos extranjeras departamento por departamento, y muestra que 36 departamentos ya superan el límite legal del 15 % que fija la Ley 26.737, aun cuando ninguna provincia lo excede en su promedio.</p><p>La exposición se apoyó en los datos obtenidos por pedidos de acceso a la información pública y georreferenciados por el equipo, y buscó aportar evidencia empírica a una discusión que suele darse con afirmaciones generales.</p>"}, {"cat": "Encuentro", "fecha": "2026", "img": "novedades/encuentro-unq.jpg", "titulo": "I Encuentro «Territorio en Diálogo» en la UNQ", "cuerpo": "<p>El PRIHA participó del I Encuentro «Territorio en Diálogo: ciencias, tecnologías e historia socioambiental», realizado en la Universidad Nacional de Quilmes.</p><p>El encuentro reunió a investigadoras e investigadores de distintas disciplinas para pensar de manera conjunta las transformaciones del territorio y sus dimensiones sociales, ambientales y tecnológicas.</p>"}, {"cat": "Congreso", "fecha": "2026", "img": "novedades/congreso-montevideo.jpg", "titulo": "VIII Congreso Latinoamericano de Historia Económica", "cuerpo": "<p>Integrantes del PRIHA coordinaron mesas de trabajo y expusieron sus investigaciones en el VIII Congreso Latinoamericano de Historia Económica (CLADHE), celebrado en Montevideo, Uruguay.</p><p>Las presentaciones abordaron la historia agraria argentina y latinoamericana desde una perspectiva comparada, en diálogo con especialistas de toda la región.</p>"}, {"cat": "Publicación", "fecha": "2025", "img": "novedades/publicacion-mundos.jpg", "titulo": "Nuevo artículo sobre los obreros rurales pampeanos", "cuerpo": "<p>La Revista Mundos do Trabalho publicó el artículo «El secreto de la competitividad argentina: condiciones de vida y trabajo de los obreros rurales pampeanos (1880-1914)», de Pablo Volkind.</p><p>El trabajo analiza cómo la ventaja exportadora del país durante el período agroexportador se sostuvo sobre las condiciones de vida y trabajo de los obreros rurales de la pampa cerealera.</p>"}]</script>
+    <script type="application/json" id="nov-datos">[{"cat": "Institucional", "fecha": "23/04/2026", "img": "img/novedades/senado-2026.jpg", "titulo": "El Observatorio de Tierras presentó su 4.° informe en el Senado", "cuerpo": "<p>El Observatorio de Tierras del PRIHA presentó su cuarto informe en el marco del debate en comisiones del Senado de la Nación sobre el proyecto de ley de propiedad privada y extranjerización de tierras.</p><p>El informe actualiza el relevamiento de la superficie en manos extranjeras departamento por departamento, y muestra que 36 departamentos ya superan el límite legal del 15 % que fija la Ley 26.737, aun cuando ninguna provincia lo excede en su promedio.</p><p>La exposición se apoyó en los datos obtenidos por pedidos de acceso a la información pública y georreferenciados por el equipo, y buscó aportar evidencia empírica a una discusión que suele darse con afirmaciones generales.</p>"}, {"cat": "Encuentro", "fecha": "2026", "img": "img/novedades/encuentro-unq.jpg", "titulo": "I Encuentro «Territorio en Diálogo» en la UNQ", "cuerpo": "<p>El PRIHA participó del I Encuentro «Territorio en Diálogo: ciencias, tecnologías e historia socioambiental», realizado en la Universidad Nacional de Quilmes.</p><p>El encuentro reunió a investigadoras e investigadores de distintas disciplinas para pensar de manera conjunta las transformaciones del territorio y sus dimensiones sociales, ambientales y tecnológicas.</p>"}, {"cat": "Congreso", "fecha": "2026", "img": "img/novedades/congreso-montevideo.jpg", "titulo": "VIII Congreso Latinoamericano de Historia Económica", "cuerpo": "<p>Integrantes del PRIHA coordinaron mesas de trabajo y expusieron sus investigaciones en el VIII Congreso Latinoamericano de Historia Económica (CLADHE), celebrado en Montevideo, Uruguay.</p><p>Las presentaciones abordaron la historia agraria argentina y latinoamericana desde una perspectiva comparada, en diálogo con especialistas de toda la región.</p>"}, {"cat": "Publicación", "fecha": "2025", "img": "img/novedades/publicacion-mundos.jpg", "titulo": "Nuevo artículo sobre los obreros rurales pampeanos", "cuerpo": "<p>La Revista Mundos do Trabalho publicó el artículo «El secreto de la competitividad argentina: condiciones de vida y trabajo de los obreros rurales pampeanos (1880-1914)», de Pablo Volkind.</p><p>El trabajo analiza cómo la ventaja exportadora del país durante el período agroexportador se sostuvo sobre las condiciones de vida y trabajo de los obreros rurales de la pampa cerealera.</p>"}]</script>
 
     <!-- Modal de novedad (oculto por defecto; el JS lo llena y lo muestra) -->
+    <!-- Explorador de todas las novedades. Las tarjetas se dibujan desde el mismo
+         JSON #nov-datos que usa el carrusel, asi que sumar una novedad al JSON la
+         hace aparecer aca sin tocar nada mas. -->
+    <div id="nov-todas" class="fixed inset-0 z-[78] hidden items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="nov-todas-titulo">
+      <div id="nov-todas-fondo" class="absolute inset-0 bg-tinta/70 backdrop-blur-sm"></div>
+      <div class="relative bg-hueso rounded-2xl sm:rounded-3xl w-full max-w-6xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+
+        <div class="shrink-0 bg-white border-b border-linea px-4 sm:px-7 pt-5 pb-4">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="rotulo text-ladrillo text-[10px] mb-1">Archivo del Programa</p>
+              <h3 id="nov-todas-titulo" class="text-xl sm:text-2xl font-bold leading-tight">Todas las novedades</h3>
+            </div>
+            <button type="button" id="nov-todas-cerrar"
+                    class="shrink-0 w-10 h-10 rounded-full bg-hueso hover:bg-linea border border-linea flex items-center justify-center transition-colors"
+                    aria-label="Cerrar el explorador">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="relative flex-1">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-tinta/35 text-sm" aria-hidden="true"></i>
+              <input type="search" id="nov-todas-buscar" placeholder="Buscar por titulo, texto o categoria"
+                     class="w-full border border-linea rounded-xl pl-10 pr-3 py-2.5 text-sm bg-hueso focus:outline-none focus:border-ladrillo focus:bg-white transition-colors"
+                     aria-label="Buscar entre las novedades">
+            </div>
+            <div id="nov-todas-chips" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+        <div class="overflow-y-auto px-4 sm:px-7 py-6 flex-1">
+          <p id="nov-todas-cuenta" class="rotulo text-[10px] text-tinta/45 mb-4"></p>
+          <div id="nov-todas-grilla" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+          <p id="nov-todas-vacio" class="hidden text-center text-tinta/50 py-16">
+            <i class="fa-regular fa-folder-open text-4xl block mb-3 text-tinta/20" aria-hidden="true"></i>
+            No hay novedades que coincidan con la busqueda.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div id="nov-modal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="nov-modal-titulo">
       <div id="nov-modal-fondo" class="absolute inset-0 bg-tinta/70 backdrop-blur-sm"></div>
       <div class="relative bg-white rounded-2xl w-full max-w-2xl max-h-[88vh] overflow-hidden flex flex-col shadow-2xl">
@@ -1639,12 +1698,12 @@
   <footer id="contacto" class="bg-tinta text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <img src="logo_priha_blanco.png" alt="PRIHA" width="1600" height="216" loading="lazy" decoding="async"
+        <img src="img/logo_priha_blanco.png" alt="PRIHA" width="1600" height="216" loading="lazy" decoding="async"
              class="h-9 w-auto object-contain mb-4">
         <p class="text-white/60 text-sm leading-relaxed mb-6">Programa de Investigaciones sobre Historia Agraria. Facultad de Ciencias Económicas, Universidad de Buenos Aires.</p>
         <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
            class="inline-block hover:opacity-75 transition-opacity">
-          <img src="logo_fce.png" alt="Facultad de Ciencias Económicas · Universidad de Buenos Aires (se abre en una pestaña nueva)"
+          <img src="img/logo_fce.png" alt="Facultad de Ciencias Económicas · Universidad de Buenos Aires (se abre en una pestaña nueva)"
                width="640" height="371" loading="lazy" decoding="async" class="h-10 w-auto object-contain">
         </a>
       </div>
@@ -1850,6 +1909,7 @@
       /* ============ 4. Menu movil ============ */
       var menuBtn = document.getElementById('menu-btn');
       var menuIcon = document.getElementById('menu-icon');
+      var menuTexto = document.getElementById('menu-texto');
       var mobileMenu = document.getElementById('mobile-menu');
       var abierto = false;
 
@@ -1858,6 +1918,7 @@
         mobileMenu.classList.toggle('flex', abierto);
         menuIcon.classList.toggle('fa-bars', !abierto);
         menuIcon.classList.toggle('fa-xmark', abierto);
+        if (menuTexto) menuTexto.textContent = abierto ? 'Cerrar' : 'Menú';
         menuBtn.setAttribute('aria-expanded', String(abierto));
       }
       function cerrarMenu() { if (abierto) { abierto = false; pintarMenu(); } }
@@ -1949,22 +2010,32 @@
 
         // Arrastre con el mouse (además del scroll táctil y la rueda)
         var arrastrando = false, xInicio = 0, scrollInicio = 0, seMovio = false;
+        // OJO: la clase .arrastrando apaga los pointer-events de las tarjetas.
+        // Si se pusiera ya en pointerdown, el hit-test del mouseup caeria en el
+        // carrusel en vez de en el boton, el click se dispararia sobre el ancestro
+        // comun de ambos y la tarjeta no abriria nunca con mouse. Por eso la clase
+        // recien se agrega cuando el puntero se movio de verdad.
         carrusel.addEventListener('pointerdown', function (e) {
           if (e.pointerType === 'mouse' && e.button !== 0) return;
+          if (e.pointerType !== 'mouse') return;  // en tactil alcanza con el scroll nativo
           arrastrando = true; seMovio = false;
           xInicio = e.clientX; scrollInicio = carrusel.scrollLeft;
-          carrusel.classList.add('arrastrando');
         });
         window.addEventListener('pointermove', function (e) {
           if (!arrastrando) return;
           var dx = e.clientX - xInicio;
-          if (Math.abs(dx) > 4) seMovio = true;
-          carrusel.scrollLeft = scrollInicio - dx;
+          if (!seMovio && Math.abs(dx) > 4) {
+            seMovio = true;
+            carrusel.classList.add('arrastrando');
+          }
+          if (seMovio) carrusel.scrollLeft = scrollInicio - dx;
         });
         window.addEventListener('pointerup', function () {
           if (!arrastrando) return;
           arrastrando = false;
-          carrusel.classList.remove('arrastrando');
+          // se saca en el proximo tick: durante el click que viene despues la clase
+          // todavia tiene que estar puesta para cancelar la apertura tras un arrastre
+          if (seMovio) setTimeout(function () { carrusel.classList.remove('arrastrando'); }, 0);
         });
       }
 
@@ -1985,6 +2056,7 @@
         var mCuerpo = document.getElementById('nov-modal-cuerpo');
         var btnCerrar = document.getElementById('nov-modal-cerrar');
         var fondo = document.getElementById('nov-modal-fondo');
+        var todas = document.getElementById('nov-todas');
         var ultimoFoco = null;
 
         function abrirModal(indice) {
@@ -2008,7 +2080,8 @@
 
         function cerrarModal() {
           modal.classList.remove('visible');
-          document.body.style.overflow = '';
+          // si el explorador quedo abierto detras, el scroll del fondo sigue bloqueado
+          if (!(todas && todas.classList.contains('abierto'))) document.body.style.overflow = '';
           var cerrarDef = function () {
             modal.classList.remove('abierto');
             modal.removeEventListener('transitionend', cerrarDef);
@@ -2031,8 +2104,126 @@
 
         btnCerrar.addEventListener('click', cerrarModal);
         fondo.addEventListener('click', cerrarModal);
+
+        /* ---------- 9b. Explorador de todas las novedades ---------- */
+        var btnVerTodas = document.getElementById('nov-ver-todas');
+        if (todas && btnVerTodas) {
+          var tFondo   = document.getElementById('nov-todas-fondo');
+          var tCerrar  = document.getElementById('nov-todas-cerrar');
+          var tBuscar  = document.getElementById('nov-todas-buscar');
+          var tChips   = document.getElementById('nov-todas-chips');
+          var tGrilla  = document.getElementById('nov-todas-grilla');
+          var tVacio   = document.getElementById('nov-todas-vacio');
+          var tCuenta  = document.getElementById('nov-todas-cuenta');
+          var catActiva = 'todas';
+          var focoPrevio = null;
+
+          function escapar(t) {
+            return String(t == null ? '' : t)
+              .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+          }
+          function sinTags(html) {
+            var d = document.createElement('div');
+            d.innerHTML = html || '';
+            return d.textContent || '';
+          }
+          function normalizar(t) {
+            // saca acentos para que "publicacion" encuentre "publicación"
+            return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          }
+
+          // Chips: "Todas" + una por cada categoria distinta que exista en el JSON
+          var cats = [];
+          datosNov.forEach(function (n) {
+            if (n.cat && cats.indexOf(n.cat) === -1) cats.push(n.cat);
+          });
+          var htmlChips = ['<button type="button" data-cat="todas" class="nt-chip activo rotulo text-[10px] px-3 py-2 rounded-full border border-linea bg-white hover:border-ladrillo transition-colors">Todas</button>'];
+          cats.forEach(function (c) {
+            htmlChips.push('<button type="button" data-cat="' + escapar(c) + '" class="nt-chip rotulo text-[10px] px-3 py-2 rounded-full border border-linea bg-white hover:border-ladrillo transition-colors">' + escapar(c) + '</button>');
+          });
+          tChips.innerHTML = htmlChips.join('');
+
+          function pintarGrilla() {
+            var q = normalizar(tBuscar.value.trim());
+            var visibles = 0;
+            var html = '';
+            datosNov.forEach(function (n, i) {
+              if (catActiva !== 'todas' && n.cat !== catActiva) return;
+              if (q) {
+                var heno = normalizar([n.titulo, n.cat, n.fecha, sinTags(n.cuerpo)].join(' '));
+                if (heno.indexOf(q) === -1) return;
+              }
+              visibles++;
+              html += '<button type="button" data-i="' + i + '" class="nt-card group text-left bg-white rounded-2xl border border-linea overflow-hidden flex flex-col hover:border-ladrillo hover:-translate-y-1 transition-all" aria-haspopup="dialog">' +
+                '<span class="relative block aspect-[124/100] bg-hueso overflow-hidden">' +
+                  (n.img ? '<img src="' + escapar(n.img) + '" alt="" loading="lazy" decoding="async" onerror="this.style.display=\'none\'" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">' : '') +
+                  '<span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-3xl"></i></span>' +
+                '</span>' +
+                '<span class="p-4 flex flex-col flex-1">' +
+                  '<span class="rotulo text-ladrillo text-[10px] mb-1.5 block">' + escapar(n.cat) + '</span>' +
+                  '<span class="font-bold text-base leading-snug mb-2 block group-hover:text-ladrillo transition-colors">' + escapar(n.titulo) + '</span>' +
+                  '<span class="text-xs text-tinta/50 mt-auto block">' + escapar(n.fecha) + '</span>' +
+                '</span>' +
+              '</button>';
+            });
+            tGrilla.innerHTML = html;
+            tVacio.classList.toggle('hidden', visibles > 0);
+            tCuenta.textContent = visibles === datosNov.length
+              ? visibles + (visibles === 1 ? ' novedad' : ' novedades')
+              : visibles + ' de ' + datosNov.length;
+          }
+
+          function abrirTodas() {
+            focoPrevio = document.activeElement;
+            pintarGrilla();
+            todas.classList.add('abierto');
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(function () { todas.classList.add('visible'); });
+            tCerrar.focus();
+          }
+          function cerrarTodas() {
+            todas.classList.remove('visible');
+            if (!modal.classList.contains('abierto')) document.body.style.overflow = '';
+            var def = function () {
+              todas.classList.remove('abierto');
+              todas.removeEventListener('transitionend', def);
+            };
+            if (sinMovimiento) def();
+            else todas.addEventListener('transitionend', def);
+            if (focoPrevio && focoPrevio.focus) focoPrevio.focus();
+          }
+
+          btnVerTodas.addEventListener('click', abrirTodas);
+          tCerrar.addEventListener('click', cerrarTodas);
+          tFondo.addEventListener('click', cerrarTodas);
+          tBuscar.addEventListener('input', pintarGrilla);
+
+          tChips.addEventListener('click', function (e) {
+            var chip = e.target.closest('.nt-chip');
+            if (!chip) return;
+            catActiva = chip.getAttribute('data-cat');
+            tChips.querySelectorAll('.nt-chip').forEach(function (c) {
+              c.classList.toggle('activo', c === chip);
+            });
+            pintarGrilla();
+          });
+
+          // Abrir el detalle desde la grilla: el explorador queda abierto detras
+          tGrilla.addEventListener('click', function (e) {
+            var card = e.target.closest('.nt-card');
+            if (!card) return;
+            abrirModal(parseInt(card.getAttribute('data-i'), 10));
+          });
+        }
+
+        // Escape cierra primero el detalle y recien despues el explorador
         document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('abierto')) cerrarModal();
+          if (e.key !== 'Escape') return;
+          if (modal.classList.contains('abierto')) { cerrarModal(); return; }
+          if (todas && todas.classList.contains('abierto')) {
+            document.getElementById('nov-todas-cerrar').click();
+          }
         });
       }
 
