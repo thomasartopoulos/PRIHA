@@ -63,7 +63,6 @@
     h1, h2, h3, h4 { font-family: 'Oswald', 'Arial Narrow', sans-serif; letter-spacing: -.01em; }
     .rotulo { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .12em; }
 
-
     /* ---------- Texturas rurales de fondo ----------
        parcelas:   retícula catastral irregular, como un plano de mensura
        surcos:     lineas finas paralelas, como un campo arado visto desde arriba
@@ -80,7 +79,6 @@
     .textura-surcos {
       background-image: repeating-linear-gradient(101deg, currentColor 0 1px, transparent 1px 13px);
     }
-
 
     .textura-curvas-claras {
       background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='520' viewBox='0 0 720 520'><g fill='none' stroke='%23ffffff' stroke-width='1.1'><path d='M180 170L182 174L181 179L176 182L171 183L166 183L162 185L158 186L153 186L148 184L144 181L141 178L139 174L140 170L143 167L145 164L146 160L148 156L152 153L157 152L162 153L167 155L171 157L174 160L176 163L178 166L180 170Z'/><path d='M196 170L199 178L197 186L189 191L179 192L171 193L164 196L156 199L147 199L139 195L132 190L126 185L123 178L125 170L130 164L134 159L135 152L138 144L145 138L155 138L164 141L172 144L179 147L185 152L189 157L192 164L196 170Z'/><path d='M212 170L215 181L212 193L201 200L187 202L175 203L165 207L154 212L141 212L129 207L120 199L112 190L108 181L109 170L116 161L122 154L124 144L129 133L139 124L153 123L166 128L177 134L187 138L197 143L203 151L207 160L212 170Z'/><path d='M228 170L231 184L227 199L213 209L195 211L180 212L167 218L152 225L134 226L119 219L108 208L99 196L94 183L94 170L101 158L109 148L113 136L119 121L132 110L151 109L168 116L181 124L194 129L208 135L218 145L223 157L228 170Z'/><path d='M244 170L247 187L242 205L225 218L203 221L184 222L169 228L150 238L127 240L108 232L95 217L87 201L80 186L80 170L87 155L96 142L102 128L110 110L126 96L149 94L170 103L186 114L201 121L219 127L233 139L240 154L244 170Z'/><path d='M261 170L261 190L255 211L237 226L212 231L189 233L170 239L148 250L121 255L97 245L83 226L75 207L68 189L65 170L71 152L82 136L90 119L100 99L119 82L147 80L172 91L190 105L208 113L230 119L249 132L259 150L261 170Z'/><path d='M279 170L276 193L267 216L248 234L220 242L194 244L172 250L146 263L114 269L86 258L70 235L64 211L57 191L52 170L55 149L66 130L78 110L91 88L113 69L145 65L174 78L195 95L215 105L240 112L265 125L278 146L279 170Z'/><path d='M559 300L556 304L553 306L552 309L549 312L546 314L542 315L538 316L533 316L529 314L527 311L526 306L526 303L525 300L523 296L523 292L526 289L530 287L534 285L538 285L542 285L545 287L548 289L552 290L556 292L559 296L559 300Z'/><path d='M574 300L569 306L564 311L560 316L556 321L551 326L544 327L536 328L528 328L521 325L516 319L515 312L516 305L514 300L510 293L510 286L515 280L522 277L529 275L536 273L544 274L550 277L555 280L561 283L569 286L574 292L574 300Z'/><path d='M589 300L582 309L573 316L568 322L564 331L556 338L545 341L535 340L524 339L513 335L506 327L504 317L505 308L502 300L497 290L496 279L503 271L514 266L525 264L535 263L545 263L554 266L563 271L571 275L581 280L589 289L589 300Z'/><path d='M604 300L594 312L583 320L576 329L571 340L561 350L547 354L533 353L519 350L506 345L496 335L493 322L493 310L490 300L484 288L482 273L491 261L506 256L521 255L534 253L547 252L559 254L570 260L581 267L594 275L604 286L604 300Z'/><path d='M618 300L607 315L593 325L584 335L578 349L566 363L549 369L531 366L514 361L499 353L487 342L482 327L481 313L478 300L471 285L469 266L479 251L498 245L517 245L532 244L548 241L564 243L579 250L592 259L606 269L617 283L618 300Z'/><path d='M632 300L620 318L603 330L592 341L585 358L572 376L551 384L529 380L510 371L493 362L478 349L470 333L469 316L465 300L458 282L455 260L467 242L490 235L513 235L531 235L549 231L569 231L587 238L603 250L618 263L630 280L632 300Z'/></g></svg>");
@@ -111,7 +109,6 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease-out, transform .7s ease-out; will-change: opacity, transform; }
     .reveal.active { opacity: 1; transform: none; }
     .reveal.done { will-change: auto; }
-
 
     /* ---------- Mapa del Observatorio ----------
        El color viene de la clase (n0-n3), no de un atributo inline, para poder
@@ -152,12 +149,16 @@
       background: #f0ece6; display: block; margin-bottom: 1rem;
     }
     .avatar-iniciales {
+      position: relative; overflow: hidden;
       width: 3.5rem; height: 3.5rem; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 1rem; font-weight: 700; font-size: 1.05rem;
       font-family: 'Oswald', sans-serif;
       background: rgba(215,116,57,.15); color: #b85a22;
     }
+    /* La foto tapa las iniciales cuando existe. Si el archivo no esta, el onerror
+       la saca del DOM y quedan las iniciales, que es el estado por defecto. */
+    .avatar-iniciales img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
     /* ---------- Hover de tarjetas · verde salvia ---------- */
     .tarjeta { transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease, background-color .3s ease; }
@@ -173,8 +174,35 @@
     @keyframes panelIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
     .barra { width: 0; transition: width 1s cubic-bezier(.22,.9,.28,1); }
     .panel[data-activo="true"] .barra { width: var(--w); }
+    /* Actividades: foto circular con aro naranja, como en el sitio del Programa */
+    .act-foto {
+      position: relative; overflow: hidden; flex-shrink: 0;
+      width: 4.5rem; height: 4.5rem; border-radius: 9999px;
+      border: 3px solid #d77439; background: rgba(215,116,57,.12);
+      display: flex; align-items: center; justify-content: center; color: #b85a22;
+    }
+    .act-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    /* Cronologia desplegable */
+    .crono > summary { list-style: none; }
+    .crono > summary::-webkit-details-marker { display: none; }
+    .crono[open] .crono-flecha { transform: rotate(180deg); background: #d77439; border-color: #d77439; color: #262425; }
+
     .pestana[aria-selected="true"] { background: #262425; color: #fff; }
     .pestana[aria-selected="true"] .pestana-num { color: #d77439; }
+
+    /* Pestanas del Observatorio: 2x2 en telefono para que los cuatro ejes entren
+       sin scroll horizontal, y columna en escritorio. Los bordes se resuelven
+       aca porque con utilidades nth-child quedaba ilegible. */
+    #obs-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+    #obs-tabs .pestana { border-right: 1px solid rgba(255,255,255,.10); border-bottom: 1px solid rgba(255,255,255,.10); }
+    #obs-tabs .pestana:nth-child(2n) { border-right: 0; }
+    #obs-tabs .pestana:nth-child(n+3) { border-bottom: 0; }
+    @media (min-width: 1024px) {
+      #obs-tabs { display: flex; flex-direction: column; }
+      #obs-tabs .pestana { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.10); }
+      #obs-tabs .pestana:last-child { border-bottom: 0; }
+    }
 
     /* ---------- Cronologia con columna fija ---------- */
     .hito { opacity: .32; transition: opacity .45s ease; }
@@ -301,14 +329,14 @@
       <nav aria-label="Navegación principal" class="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-semibold">
         <a href="#novedades" class="hover:text-ladrillo transition-colors py-1">Novedades</a>
         <a href="#observatorio" class="hover:text-ladrillo transition-colors py-1">Observatorio</a>
-        <a href="#cronologia" class="hover:text-ladrillo transition-colors py-1">Cronología</a>
+        <a href="https://www.clacso.org/historias-agrarias-desafios-del-presente-y-el-futuro-para-las-disputas-por-la-tierra-y-el-trabajo/" target="_blank" rel="noopener noreferrer" class="hover:text-ladrillo transition-colors py-1 inline-flex items-center gap-1.5">CLACSO<i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60" aria-hidden="true"></i><span class="sr-only">(se abre en una pestaña nueva)</span></a>
         <a href="#quienes-somos" class="hover:text-ladrillo transition-colors py-1">Quiénes somos</a>
         <a href="#lineas" class="hover:text-ladrillo transition-colors py-1">Líneas de trabajo</a>
         <a href="#publicaciones" class="hover:text-ladrillo transition-colors py-1">Publicaciones</a>
         <a href="#actividades" class="hover:text-ladrillo transition-colors py-1">Actividades</a>
         <a href="#prensa" class="hover:text-ladrillo transition-colors py-1">Prensa</a>
         <a href="https://x.com/priha_fce" target="_blank" rel="noopener noreferrer" class="hover:text-ladrillo p-1.5 transition-colors text-base">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">Seguinos en X (se abre en una pestaña nueva)</span>
+          <svg viewBox="0 0 512 512" class="w-[0.95em] h-[0.95em] inline-block align-[-0.1em] fill-current" aria-hidden="true" focusable="false"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg><span class="sr-only">Seguinos en X (se abre en una pestaña nueva)</span>
         </a>
         <a href="#contacto" class="bg-tinta text-white px-5 py-2 rounded-full hover:bg-ladrillo transition-colors active:scale-95">Contacto</a>
       </nav>
@@ -325,7 +353,7 @@
     <nav id="mobile-menu" aria-label="Navegación móvil" class="hidden xl:hidden bg-white border-b border-linea px-6 py-6 flex-col gap-3 text-sm font-semibold shadow-xl">
       <a href="#novedades" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Novedades</a>
       <a href="#observatorio" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Observatorio</a>
-      <a href="#cronologia" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Cronología</a>
+      <a href="https://www.clacso.org/historias-agrarias-desafios-del-presente-y-el-futuro-para-las-disputas-por-la-tierra-y-el-trabajo/" target="_blank" rel="noopener noreferrer" class="py-2 border-b border-linea hover:text-ladrillo transition-colors flex items-center justify-between"><span>CLACSO · Historias Agrarias<span class="sr-only">(se abre en una pestaña nueva)</span></span><i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i></a>
       <a href="#quienes-somos" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Quiénes somos</a>
       <a href="#lineas" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Líneas de trabajo</a>
       <a href="#publicaciones" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Publicaciones</a>
@@ -333,7 +361,7 @@
       <a href="#prensa" class="mobile-link py-2 border-b border-linea hover:text-ladrillo transition-colors">Prensa</a>
       <a href="https://x.com/priha_fce" target="_blank" rel="noopener noreferrer" class="py-2 border-b border-linea hover:text-ladrillo transition-colors flex items-center justify-between">
         <span>Seguinos en X <span class="sr-only">(se abre en una pestaña nueva)</span></span>
-        <i class="fa-brands fa-x-twitter text-base" aria-hidden="true"></i>
+        <svg viewBox="0 0 512 512" class="w-[0.95em] h-[0.95em] inline-block align-[-0.1em] fill-current text-base" aria-hidden="true" focusable="false"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
       </a>
       <a href="#contacto" class="mobile-link text-center bg-ladrillo text-white py-3 rounded-xl mt-2 hover:bg-tinta transition-colors">Contacto</a>
     </nav>
@@ -381,8 +409,8 @@
     <!-- Cada novedad es un <article> dentro de la pista del carrusel. Los datos del
          texto completo (para el popup) están en el <script type="application/json">
          de más abajo, en el mismo orden que las tarjetas (data-novedad="0", "1"…).
-         Para agregar una novedad a mano: sumá un <article> a la pista Y un objeto al
-         JSON, en la misma posición. Cuando el sitio migre a Astro, esto se genera solo. -->
+         Para agregar una novedad alcanza con sumar un objeto al JSON: las tarjetas del
+         carrusel y las del explorador se dibujan solas a partir de ahí. -->
     <section id="novedades" aria-labelledby="h-novedades" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
@@ -408,62 +436,13 @@
 
         <!-- Pista del carrusel: scroll horizontal con arrastre y botones -->
         <div id="nov-carrusel" class="overflow-x-auto scrollbar-oculta -mx-4 px-4 reveal" role="region" aria-label="Carrusel de novedades" tabindex="0">
-          <div id="nov-pista" class="flex gap-6 pb-2">
-            <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="0">
-              <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="img/novedades/senado-2026.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
-              </button>
-              <div class="p-5 flex flex-col flex-1">
-                <p class="rotulo text-ladrillo text-[10px] mb-2">Institucional</p>
-                <h3 class="font-bold text-lg leading-snug mb-2"><button type="button" class="novedad-abrir text-left hover:text-ladrillo transition-colors" aria-haspopup="dialog">El Observatorio de Tierras presentó su 4.° informe en el Senado</button></h3>
-                <p class="text-xs text-tinta/50 mb-3">23/04/2026</p>
-                <p class="text-sm text-tinta/70 leading-relaxed line-clamp-3">Integrantes del PRIHA expusieron ante el debate en comisiones sobre la ley de propiedad privada, con los datos actualizados de extranjerización departamento por departamento…</p>
-              </div>
-            </article>
-            <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="1">
-              <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="img/novedades/encuentro-unq.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
-              </button>
-              <div class="p-5 flex flex-col flex-1">
-                <p class="rotulo text-ladrillo text-[10px] mb-2">Encuentro</p>
-                <h3 class="font-bold text-lg leading-snug mb-2"><button type="button" class="novedad-abrir text-left hover:text-ladrillo transition-colors" aria-haspopup="dialog">I Encuentro «Territorio en Diálogo» en la UNQ</button></h3>
-                <p class="text-xs text-tinta/50 mb-3">2026</p>
-                <p class="text-sm text-tinta/70 leading-relaxed line-clamp-3">Un espacio de intercambio sobre ciencias, tecnologías e historia socioambiental, organizado en la Universidad Nacional de Quilmes…</p>
-              </div>
-            </article>
-            <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="2">
-              <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="img/novedades/congreso-montevideo.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
-              </button>
-              <div class="p-5 flex flex-col flex-1">
-                <p class="rotulo text-ladrillo text-[10px] mb-2">Congreso</p>
-                <h3 class="font-bold text-lg leading-snug mb-2"><button type="button" class="novedad-abrir text-left hover:text-ladrillo transition-colors" aria-haspopup="dialog">VIII Congreso Latinoamericano de Historia Económica</button></h3>
-                <p class="text-xs text-tinta/50 mb-3">2026</p>
-                <p class="text-sm text-tinta/70 leading-relaxed line-clamp-3">Integrantes del Programa coordinaron mesas y expusieron sus investigaciones en el encuentro realizado en Montevideo, Uruguay…</p>
-              </div>
-            </article>
-            <article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="3">
-              <button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">
-                <img src="img/novedades/publicacion-mundos.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" onerror="this.style.display='none'">
-                <span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-4xl"></i></span>
-              </button>
-              <div class="p-5 flex flex-col flex-1">
-                <p class="rotulo text-ladrillo text-[10px] mb-2">Publicación</p>
-                <h3 class="font-bold text-lg leading-snug mb-2"><button type="button" class="novedad-abrir text-left hover:text-ladrillo transition-colors" aria-haspopup="dialog">Nuevo artículo sobre los obreros rurales pampeanos</button></h3>
-                <p class="text-xs text-tinta/50 mb-3">2025</p>
-                <p class="text-sm text-tinta/70 leading-relaxed line-clamp-3">Pablo Volkind publica en la Revista Mundos do Trabalho un estudio sobre las condiciones de vida y trabajo detrás de la competitividad exportadora…</p>
-              </div>
-            </article>
-          </div>
+          <div id="nov-pista" class="flex gap-6 pb-2"><!-- las tarjetas las dibuja el JS desde #nov-datos --></div>
         </div>
       </div>
     </section>
 
     <!-- Datos de las novedades para el popup (mismo orden que las tarjetas) -->
-    <script type="application/json" id="nov-datos">[{"cat": "Institucional", "fecha": "23/04/2026", "img": "img/novedades/senado-2026.jpg", "titulo": "El Observatorio de Tierras presentó su 4.° informe en el Senado", "cuerpo": "<p>El Observatorio de Tierras del PRIHA presentó su cuarto informe en el marco del debate en comisiones del Senado de la Nación sobre el proyecto de ley de propiedad privada y extranjerización de tierras.</p><p>El informe actualiza el relevamiento de la superficie en manos extranjeras departamento por departamento, y muestra que 36 departamentos ya superan el límite legal del 15 % que fija la Ley 26.737, aun cuando ninguna provincia lo excede en su promedio.</p><p>La exposición se apoyó en los datos obtenidos por pedidos de acceso a la información pública y georreferenciados por el equipo, y buscó aportar evidencia empírica a una discusión que suele darse con afirmaciones generales.</p>"}, {"cat": "Encuentro", "fecha": "2026", "img": "img/novedades/encuentro-unq.jpg", "titulo": "I Encuentro «Territorio en Diálogo» en la UNQ", "cuerpo": "<p>El PRIHA participó del I Encuentro «Territorio en Diálogo: ciencias, tecnologías e historia socioambiental», realizado en la Universidad Nacional de Quilmes.</p><p>El encuentro reunió a investigadoras e investigadores de distintas disciplinas para pensar de manera conjunta las transformaciones del territorio y sus dimensiones sociales, ambientales y tecnológicas.</p>"}, {"cat": "Congreso", "fecha": "2026", "img": "img/novedades/congreso-montevideo.jpg", "titulo": "VIII Congreso Latinoamericano de Historia Económica", "cuerpo": "<p>Integrantes del PRIHA coordinaron mesas de trabajo y expusieron sus investigaciones en el VIII Congreso Latinoamericano de Historia Económica (CLADHE), celebrado en Montevideo, Uruguay.</p><p>Las presentaciones abordaron la historia agraria argentina y latinoamericana desde una perspectiva comparada, en diálogo con especialistas de toda la región.</p>"}, {"cat": "Publicación", "fecha": "2025", "img": "img/novedades/publicacion-mundos.jpg", "titulo": "Nuevo artículo sobre los obreros rurales pampeanos", "cuerpo": "<p>La Revista Mundos do Trabalho publicó el artículo «El secreto de la competitividad argentina: condiciones de vida y trabajo de los obreros rurales pampeanos (1880-1914)», de Pablo Volkind.</p><p>El trabajo analiza cómo la ventaja exportadora del país durante el período agroexportador se sostuvo sobre las condiciones de vida y trabajo de los obreros rurales de la pampa cerealera.</p>"}]</script>
+    <script type="application/json" id="nov-datos">[{"cat": "Informe", "fecha": "05/08/2026", "titulo": "Séptimo informe · El NOA al rojo vivo", "resumen": "Cómo avanza la extranjerización de la tierra en Salta, Jujuy y Tucumán y qué consecuencias genera en el territorio.", "cuerpo": "<p>«El NOA al rojo vivo: cómo avanza la extranjerización de la tierra en Salta, Jujuy y Tucumán y qué consecuencias genera en el territorio».</p><p>El informe releva la superficie bajo titularidad extranjera en las tres provincias del Noroeste y analiza sus efectos sobre las comunidades, el agua y los bienes comunes de la región.</p>", "icono": "fa-file-lines", "enlace": "https://drive.google.com/file/d/1EzZHA25U3fz6UsJ-eBVOhnH9rV2OP9YM/view", "enlaceTexto": "Leer el informe completo"}, {"cat": "Informe", "fecha": "31/07/2026", "titulo": "Sexto informe · Neuquén en la mira", "resumen": "La crítica situación de los departamentos de Lácar y Collón Curá.", "cuerpo": "<p>«Neuquén en la mira: la crítica situación de los departamentos de Lacar y Collón Curá».</p><p>Dos departamentos neuquinos concentran niveles de extranjerización muy por encima del promedio nacional. El informe reconstruye cómo se llegó a esa situación y qué actores intervienen.</p>", "icono": "fa-file-lines", "enlace": "https://drive.google.com/file/d/1AUase3FYB0-QYO05l7Fk9krR_Kas0bxk/view", "enlaceTexto": "Leer el informe completo"}, {"cat": "Informe", "fecha": "28/07/2026", "titulo": "Quinto informe · El Paraná en venta", "resumen": "Cómo avanza la extranjerización de la tierra en Misiones, Corrientes y Entre Ríos.", "cuerpo": "<p>«El Paraná en venta: cómo avanza la extranjerización de la tierra en Misiones, Corrientes y Entre Ríos».</p><p>El relevamiento del litoral muestra la relación entre la titularidad extranjera del suelo y el control de la principal vía fluvial del país.</p>", "icono": "fa-file-lines", "enlace": "https://drive.google.com/file/d/1Qw2Loh0IsXudCwljdpY6mWI5ZP6_aoZc/view", "enlaceTexto": "Leer el informe completo"}, {"cat": "Institucional", "fecha": "23/04/2026", "img": "img/novedades/senado-2026.jpg", "titulo": "El Observatorio de Tierras presentó su 4.° informe en el Senado", "cuerpo": "<p>El Observatorio de Tierras del PRIHA presentó su cuarto informe en el marco del debate en comisiones del Senado de la Nación sobre el proyecto de ley de propiedad privada y extranjerización de tierras.</p><p>El informe actualiza el relevamiento de la superficie en manos extranjeras departamento por departamento, y muestra que 36 departamentos ya superan el límite legal del 15 % que fija la Ley 26.737, aun cuando ninguna provincia lo excede en su promedio.</p><p>La exposición se apoyó en los datos obtenidos por pedidos de acceso a la información pública y georreferenciados por el equipo, y buscó aportar evidencia empírica a una discusión que suele darse con afirmaciones generales.</p>", "resumen": "Integrantes del PRIHA expusieron ante el debate en comisiones sobre la ley de propiedad privada, con los datos actualizados departamento por departamento."}, {"cat": "Informe", "fecha": "20/04/2026", "titulo": "Cuarto informe · Un nuevo estatuto legal del coloniaje", "resumen": "Análisis del proyecto de ley de extranjerización de tierras del gobierno nacional.", "cuerpo": "<p>«El proyecto de ley de extranjerización de tierras del gobierno nacional, un nuevo estatuto legal del coloniaje».</p><p>El informe analiza artículo por artículo el proyecto enviado al Congreso y lo compara con el régimen vigente de la Ley 26.737. Es el trabajo que el Observatorio presentó en el debate en comisiones del Senado.</p>", "icono": "fa-file-lines", "enlace": "https://drive.google.com/file/d/1-OJQN9p_lzxbKbZHZ5jdo2vCi9lHPGBJ/view", "enlaceTexto": "Leer el informe completo"}, {"cat": "Informe", "fecha": "25/03/2026", "titulo": "Tercer informe · Territorio y bienes comunes en disputa", "resumen": "Extractivismo y extranjerización en la Argentina.", "cuerpo": "<p>«Territorio y bienes comunes en disputa: extractivismo y extranjerización en la Argentina».</p><p>El informe cruza la titularidad extranjera del suelo con la localización de los proyectos extractivos y las reservas de agua, litio e hidrocarburos.</p>", "icono": "fa-file-lines", "enlace": "https://drive.google.com/file/d/1KUVtDCR2mfs7dnGvnCb1_t1m57e8TU4X/view", "enlaceTexto": "Leer el informe completo"}, {"cat": "Informe", "fecha": "30/01/2026", "titulo": "Segundo informe · Argentina para los estadounidenses", "resumen": "La extranjerización del territorio nacional en el contexto de la ofensiva neoimperial.", "cuerpo": "<p>«Argentina para los estadounidenses: la extranjerización del territorio nacional en el contexto de la ofensiva neoimperial».</p><p>El informe sitúa el avance de la titularidad extranjera del suelo argentino dentro del reposicionamiento geopolítico de los Estados Unidos sobre la región.</p>", "icono": "fa-file-lines", "enlace": "https://observatoriodetierras.blogspot.com/2026/01/segundo-informe-argentina-para-los.html", "enlaceTexto": "Leer el informe completo"}, {"cat": "Informe", "fecha": "15/12/2025", "titulo": "Primer informe · Un acuciante problema de soberanía", "resumen": "La extranjerización de tierras en nuestro país: el informe que inauguró el Observatorio.", "cuerpo": "<p>«La extranjerización de tierras en nuestro país: un acuciante problema de soberanía».</p><p>El primer informe del Observatorio de Tierras establece el marco del relevamiento: qué se mide, con qué fuentes y por qué el promedio nacional esconde el fenómeno.</p>", "icono": "fa-file-lines", "enlace": "https://observatoriodetierras.blogspot.com/2025/12/la-extranjerizacion-de-tierras-en.html", "enlaceTexto": "Leer el informe completo"}, {"cat": "Encuentro", "fecha": "2026", "img": "img/novedades/encuentro-unq.jpg", "titulo": "I Encuentro «Territorio en Diálogo» en la UNQ", "cuerpo": "<p>El PRIHA participó del I Encuentro «Territorio en Diálogo: ciencias, tecnologías e historia socioambiental», realizado en la Universidad Nacional de Quilmes.</p><p>El encuentro reunió a investigadoras e investigadores de distintas disciplinas para pensar de manera conjunta las transformaciones del territorio y sus dimensiones sociales, ambientales y tecnológicas.</p>", "resumen": "Un espacio de intercambio sobre ciencias, tecnologías e historia socioambiental, organizado en la Universidad Nacional de Quilmes."}, {"cat": "Congreso", "fecha": "2026", "img": "img/novedades/congreso-montevideo.jpg", "titulo": "VIII Congreso Latinoamericano de Historia Económica", "cuerpo": "<p>Integrantes del PRIHA coordinaron mesas de trabajo y expusieron sus investigaciones en el VIII Congreso Latinoamericano de Historia Económica (CLADHE), celebrado en Montevideo, Uruguay.</p><p>Las presentaciones abordaron la historia agraria argentina y latinoamericana desde una perspectiva comparada, en diálogo con especialistas de toda la región.</p>", "resumen": "Integrantes del Programa coordinaron mesas y expusieron sus investigaciones en el encuentro realizado en Montevideo, Uruguay."}, {"cat": "Publicación", "fecha": "2025", "img": "img/novedades/publicacion-mundos.jpg", "titulo": "Nuevo artículo sobre los obreros rurales pampeanos", "cuerpo": "<p>La Revista Mundos do Trabalho publicó el artículo «El secreto de la competitividad argentina: condiciones de vida y trabajo de los obreros rurales pampeanos (1880-1914)», de Pablo Volkind.</p><p>El trabajo analiza cómo la ventaja exportadora del país durante el período agroexportador se sostuvo sobre las condiciones de vida y trabajo de los obreros rurales de la pampa cerealera.</p>", "resumen": "Pablo Volkind publica en la Revista Mundos do Trabalho un estudio sobre las condiciones de vida y trabajo detrás de la competitividad exportadora."}]</script>
 
     <!-- Modal de novedad (oculto por defecto; el JS lo llena y lo muestra) -->
     <!-- Explorador de todas las novedades. Las tarjetas se dibujan desde el mismo
@@ -523,6 +502,7 @@
           <h3 id="nov-modal-titulo" class="text-2xl sm:text-3xl font-bold leading-snug mb-2"></h3>
           <p id="nov-modal-fecha" class="text-xs text-tinta/50 mb-5"></p>
           <div id="nov-modal-cuerpo" class="space-y-3 text-sm sm:text-base text-tinta/75 leading-relaxed"></div>
+          <div id="nov-modal-acciones" class="hidden mt-7"></div>
         </div>
       </div>
     </div>
@@ -550,30 +530,30 @@
         </div>
 
         <div class="bg-white/[0.06] border border-white/15 rounded-3xl overflow-hidden backdrop-blur-sm reveal">
-          <div class="grid lg:grid-cols-[270px_1fr]">
+          <div class="grid lg:grid-cols-[228px_1fr]">
 
             <!-- Pestañas -->
-            <div role="tablist" aria-label="Ejes del Observatorio de Tierras"
-                 class="flex lg:flex-col overflow-x-auto lg:overflow-visible border-b lg:border-b-0 lg:border-r border-white/15">
+            <div role="tablist" id="obs-tabs" aria-label="Ejes del Observatorio de Tierras"
+                 class="border-b lg:border-b-0 lg:border-r border-white/15">
               <button role="tab" id="tab-escala" aria-controls="panel-escala" aria-selected="true" tabindex="0"
-                      class="pestana shrink-0 text-left px-5 py-4 lg:py-5 border-b border-white/10 transition-colors hover:bg-white/10">
+                      class="pestana text-left px-4 py-3 lg:px-5 lg:py-4 transition-colors hover:bg-white/10 flex flex-col justify-center">
                 <span class="pestana-num rotulo block text-[10px] text-white/45 mb-1">Eje 01</span>
-                <span class="font-display font-medium text-base">Cuánto</span>
+                <span class="font-display font-medium text-sm sm:text-base lg:text-[15px] leading-snug">Cuánto</span>
               </button>
               <button role="tab" id="tab-donde" aria-controls="panel-donde" aria-selected="false" tabindex="-1"
-                      class="pestana shrink-0 text-left px-5 py-4 lg:py-5 border-b border-white/10 transition-colors hover:bg-white/10">
+                      class="pestana text-left px-4 py-3 lg:px-5 lg:py-4 transition-colors hover:bg-white/10 flex flex-col justify-center">
                 <span class="pestana-num rotulo block text-[10px] text-white/45 mb-1">Eje 02</span>
-                <span class="font-display font-medium text-base">Dónde</span>
+                <span class="font-display font-medium text-sm sm:text-base lg:text-[15px] leading-snug">Dónde</span>
               </button>
               <button role="tab" id="tab-quienes" aria-controls="panel-quienes" aria-selected="false" tabindex="-1"
-                      class="pestana shrink-0 text-left px-5 py-4 lg:py-5 border-b border-white/10 transition-colors hover:bg-white/10">
+                      class="pestana text-left px-4 py-3 lg:px-5 lg:py-4 transition-colors hover:bg-white/10 flex flex-col justify-center">
                 <span class="pestana-num rotulo block text-[10px] text-white/45 mb-1">Eje 03</span>
-                <span class="font-display font-medium text-base">Por qué lo hacemos</span>
+                <span class="font-display font-medium text-sm sm:text-base lg:text-[15px] leading-snug">Por qué lo hacemos</span>
               </button>
               <button role="tab" id="tab-medicion" aria-controls="panel-medicion" aria-selected="false" tabindex="-1"
-                      class="pestana shrink-0 text-left px-5 py-4 lg:py-5 transition-colors hover:bg-white/10">
+                      class="pestana text-left px-4 py-3 lg:px-5 lg:py-4 transition-colors hover:bg-white/10 flex flex-col justify-center">
                 <span class="pestana-num rotulo block text-[10px] text-white/45 mb-1">Eje 04</span>
-                <span class="font-display font-medium text-base">Cómo se mide</span>
+                <span class="font-display font-medium text-sm sm:text-base lg:text-[15px] leading-snug">Cómo se mide</span>
               </button>
             </div>
 
@@ -1300,126 +1280,142 @@
           <p class="text-xs text-white/50 leading-relaxed max-w-2xl">
             <strong class="text-white/70">Fuente:</strong> elaboración propia en base a reportes del Registro Nacional de Tierras Rurales (Ministerio de Justicia de la Nación), obtenidos mediante solicitudes de acceso a la información pública (Ley 27.275), expediente EX-2025-94747803. Datos actualizados al 6 de agosto de 2025.
           </p>
-          <a href="https://thomasartopoulos.github.io/mapa_extranjerizacion/" target="_blank" rel="noopener noreferrer"
-             class="shrink-0 inline-flex items-center justify-center gap-2 bg-naranja hover:bg-white text-tinta font-semibold px-7 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200">
-            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-            Abrir el mapa georreferenciado
-            <span class="sr-only">(se abre en una pestaña nueva)</span>
-          </a>
+          <div class="shrink-0 flex flex-col sm:flex-row gap-3">
+            <a href="https://thomasartopoulos.github.io/mapa_extranjerizacion/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-naranja hover:bg-white text-tinta font-semibold px-6 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200">
+              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              Abrir el mapa de extranjerización
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <a href="https://www.observatoriodetierras.ar" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white hover:bg-white/10 text-white font-semibold px-6 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200">
+              <i class="fa-solid fa-arrow-up-right-from-square text-sm" aria-hidden="true"></i>
+              Ir al Observatorio de Tierras
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+          </div>
         </div>
 
-      </div>
-    </section>
+        <!-- ============ CRONOLOGIA (desplegable) ============ -->
+        <!-- Es contexto normativo del Observatorio, no su contenido principal:
+             por eso viene plegada. Es un elemento details nativo: abre sin JS y ya es accesible.
+             Para agregar un hito: copiar un <li class="hito"> y editar data-anio y data-etapa. -->
+        <details id="cronologia" class="crono group mt-8 sm:mt-10 relative bg-tinta text-white rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden reveal">
 
-    <!-- ============ MODULO INTERACTIVO 2: CRONOLOGIA CON COLUMNA FIJA ============ -->
-    <!-- El ano de la izquierda queda fijo y cambia solo al hacer scroll.
-         Para agregar un hito: copiar un <li class="hito"> y editar data-anio y data-etapa. -->
-    <section id="cronologia" aria-labelledby="h-cronologia" class="relative bg-tinta text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <summary class="relative z-10 cursor-pointer select-none px-5 sm:px-8 lg:px-10 py-6 sm:py-7 flex items-start justify-between gap-5 hover:bg-white/[0.04] transition-colors">
+            <span class="block max-w-2xl">
+              <span class="rotulo text-naranja text-xs block mb-2">Cómo llegamos hasta acá</span>
+              <span id="h-cronologia" class="block text-xl sm:text-2xl lg:text-[1.75rem] font-bold leading-tight mb-2">Ocho décadas de protección, y su desarme</span>
+              <span class="block text-white/55 text-sm leading-relaxed">Línea de tiempo de las normas que fueron cambiando quién puede comprar tierra en la Argentina.</span>
+            </span>
+            <span aria-hidden="true" class="crono-flecha shrink-0 mt-1 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300">
+              <i class="fa-solid fa-chevron-down text-sm"></i>
+            </span>
+          </summary>
 
-      <!-- Textura de surcos arados -->
-      <div aria-hidden="true" class="absolute inset-0 text-naranja textura-surcos opacity-[0.09]"></div>
+          <!-- Textura de surcos arados -->
+          <div aria-hidden="true" class="absolute inset-0 text-naranja textura-surcos opacity-[0.09] pointer-events-none"></div>
 
-      <div class="relative z-10 max-w-7xl mx-auto">
+          <div class="relative z-10 px-5 sm:px-8 lg:px-10 pb-10 sm:pb-14">
+            <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mb-10 sm:mb-14">El proyecto de derogación de la Ley de Tierras no aparece de la nada. Se inscribe en una serie de decisiones que vienen modificando, desde hace treinta años, quién puede comprar tierra en la Argentina y bajo qué reglas.</p>
 
-        <div class="max-w-2xl mb-12 sm:mb-16">
-          <p class="rotulo text-naranja text-xs mb-2">Cómo llegamos hasta acá</p>
-          <h2 id="h-cronologia" class="text-3xl sm:text-5xl font-bold mb-4 leading-[1.1]">Ocho décadas de protección, y su desarme</h2>
-          <p class="text-white/70 text-sm sm:text-lg leading-relaxed">El proyecto de derogación de la Ley de Tierras no aparece de la nada. Se inscribe en una serie de decisiones que vienen modificando, desde hace treinta años, quién puede comprar tierra en la Argentina y bajo qué reglas.</p>
-        </div>
+  <div class="grid lg:grid-cols-[minmax(0,320px)_1fr] gap-8 lg:gap-16">
 
-        <div class="grid lg:grid-cols-[minmax(0,320px)_1fr] gap-8 lg:gap-16">
-
-          <!-- Columna fija con el año activo -->
-          <div class="hidden lg:block">
-            <div class="sticky top-28">
-              <p class="rotulo text-white/40 text-xs mb-3">Estás viendo</p>
-              <p id="anio-activo" class="font-display font-bold text-8xl leading-none text-naranja anio-activo">1944</p>
-              <p id="etapa-activa" class="font-display text-xl text-white/70 mt-3 leading-snug">Las zonas de seguridad de frontera</p>
-              <p class="text-xs text-white/40 mt-6 leading-relaxed border-l-2 border-white/15 pl-3">Desplazá para recorrer la línea de tiempo.</p>
+            <!-- Columna fija con el año activo -->
+            <div class="hidden lg:block">
+              <div class="sticky top-28">
+                <p class="rotulo text-white/40 text-xs mb-3">Estás viendo</p>
+                <p id="anio-activo" class="font-display font-bold text-8xl leading-none text-naranja anio-activo">1944</p>
+                <p id="etapa-activa" class="font-display text-xl text-white/70 mt-3 leading-snug">Las zonas de seguridad de frontera</p>
+                <p class="text-xs text-white/40 mt-6 leading-relaxed border-l-2 border-white/15 pl-3">Desplazá para recorrer la línea de tiempo.</p>
+              </div>
             </div>
+
+            <!-- Hitos -->
+            <ol class="relative border-l border-white/15 pl-6 sm:pl-10 space-y-14 sm:space-y-20 list-none">
+
+              <li class="hito relative" data-anio="1944" data-etapa="Las zonas de seguridad de frontera">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">1944</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">1944</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">El decreto 15.385</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Se establecen las zonas de seguridad de frontera: la tierra en esas áreas solo puede venderse a ciudadanos argentinos. La norma sigue vigente hasta hoy.</p>
+              </li>
+
+              <li class="hito relative" data-anio="1996" data-etapa="Ocho millones de hectáreas en zona de frontera">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">1996</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">1996 · Gobierno de Menem</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">La Secretaría de Seguridad Interior</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">La nueva Secretaría absorbe funciones de la Superintendencia Nacional de Fronteras y, en sus primeros años, autoriza la venta de más de ocho millones de hectáreas en zonas de seguridad. El decreto del 44 seguía vigente, pero fue vulnerado con ventas irregulares y triangulaciones. Lago Escondido y las tierras de Benetton son los casos emblemáticos.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2000" data-etapa="El boom de los precios y la devaluación">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">Años 2000</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Años 2000</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">Tierra barata en dólares</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">El boom internacional de los precios de los alimentos dispara el valor de la tierra. La devaluación, al mismo tiempo, abarata en dólares la compra de campos fértiles y estratégicos para capitales extranjeros.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2011" data-etapa="Se sanciona la Ley de Tierras">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">2011</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2011</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">Ley 26.737 de Tierras Rurales</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Fija un límite del 15 % de extranjerización, aplicable tanto a nivel provincial como departamental, y refuerza los controles para evitar triangulaciones sin supervisión estatal. Por primera vez existe un instrumento para medir el fenómeno.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2016" data-etapa="Se flexibilizan los controles">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">2016</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2016 · Gobierno de Macri</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">El Decreto 820/2016</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Modifica la aplicación de la ley: habilita informar cambios societarios después de realizados, reduce requisitos para las compras y amplía el criterio de quién es considerado extranjero. Cambia, sobre todo, cómo se mide la extranjerización en sociedades, sucesiones, condominios y participaciones indirectas.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2023" data-etapa="La derogación por decreto">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">2023</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2023 · La Libertad Avanza</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">El DNU 70/2023</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Su artículo 154 deroga la Ley de Tierras.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2024" data-etapa="El amparo que frenó la derogación">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">2024</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Enero de 2024</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">El amparo del CECIM La Plata</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">El Centro de Ex Combatientes Islas Malvinas La Plata presenta un amparo que frena provisoriamente la derogación en la justicia. La ley queda en pie, sostenida por una medida judicial.</p>
+              </li>
+
+              <li class="hito relative" data-anio="2026" data-etapa="La derogación definitiva en el Congreso">
+                <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-3.5 h-3.5 rounded-full bg-naranja"></span>
+                <p class="font-display text-naranja text-2xl lg:hidden mb-1">Hoy</p>
+                <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Presente</p>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">El proyecto llega al Congreso</h3>
+                <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl mb-5">Con la asunción de los nuevos legisladores, el Gobierno anuncia el envío del proyecto de derogación definitiva. El PRIHA presenta el 4.° informe del Observatorio en el debate en comisiones.</p>
+                <a href="#observatorio" class="inline-flex items-center gap-2 text-naranja hover:text-white font-semibold text-sm transition-colors">
+                  Ver qué está en juego <i class="fa-solid fa-arrow-up text-xs" aria-hidden="true"></i>
+                </a>
+              </li>
+
+            </ol>
           </div>
 
-          <!-- Hitos -->
-          <ol class="relative border-l border-white/15 pl-6 sm:pl-10 space-y-14 sm:space-y-20 list-none">
+          <!-- Cierre argumental -->
+          <div class="mt-16 sm:mt-20 max-w-3xl border-l-2 border-salvia pl-6 reveal">
+            <p class="text-lg sm:text-2xl font-display leading-snug text-white/90 mb-4">Definir qué se puede vender y qué no, y bajo qué reglas, no es una cuestión administrativa: ordena el acceso a recursos centrales para la vida cotidiana y para cualquier proyecto de desarrollo.</p>
+            <p class="text-white/60 text-sm leading-relaxed">Desarmar protecciones que se sostuvieron durante décadas sobre una visión de largo plazo del territorio no es una decisión neutral: reconfigura quién decide, quién accede y quién queda afuera en los espacios más sensibles del país.</p>
+          </div>
 
-            <li class="hito relative" data-anio="1944" data-etapa="Las zonas de seguridad de frontera">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">1944</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">1944</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">El decreto 15.385</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Se establecen las zonas de seguridad de frontera: la tierra en esas áreas solo puede venderse a ciudadanos argentinos. La norma sigue vigente hasta hoy.</p>
-            </li>
-
-            <li class="hito relative" data-anio="1996" data-etapa="Ocho millones de hectáreas en zona de frontera">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">1996</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">1996 · Gobierno de Menem</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">La Secretaría de Seguridad Interior</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">La nueva Secretaría absorbe funciones de la Superintendencia Nacional de Fronteras y, en sus primeros años, autoriza la venta de más de ocho millones de hectáreas en zonas de seguridad. El decreto del 44 seguía vigente, pero fue vulnerado con ventas irregulares y triangulaciones. Lago Escondido y las tierras de Benetton son los casos emblemáticos.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2000" data-etapa="El boom de los precios y la devaluación">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">Años 2000</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Años 2000</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">Tierra barata en dólares</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">El boom internacional de los precios de los alimentos dispara el valor de la tierra. La devaluación, al mismo tiempo, abarata en dólares la compra de campos fértiles y estratégicos para capitales extranjeros.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2011" data-etapa="Se sanciona la Ley de Tierras">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">2011</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2011</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">Ley 26.737 de Tierras Rurales</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Fija un límite del 15 % de extranjerización, aplicable tanto a nivel provincial como departamental, y refuerza los controles para evitar triangulaciones sin supervisión estatal. Por primera vez existe un instrumento para medir el fenómeno.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2016" data-etapa="Se flexibilizan los controles">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">2016</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2016 · Gobierno de Macri</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">El Decreto 820/2016</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Modifica la aplicación de la ley: habilita informar cambios societarios después de realizados, reduce requisitos para las compras y amplía el criterio de quién es considerado extranjero. Cambia, sobre todo, cómo se mide la extranjerización en sociedades, sucesiones, condominios y participaciones indirectas.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2023" data-etapa="La derogación por decreto">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">2023</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">2023 · La Libertad Avanza</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">El DNU 70/2023</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">Su artículo 154 deroga la Ley de Tierras.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2024" data-etapa="El amparo que frenó la derogación">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-2.5 h-2.5 rounded-full bg-white/30"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">2024</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Enero de 2024</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">El amparo del CECIM La Plata</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">El Centro de Ex Combatientes Islas Malvinas La Plata presenta un amparo que frena provisoriamente la derogación en la justicia. La ley queda en pie, sostenida por una medida judicial.</p>
-            </li>
-
-            <li class="hito relative" data-anio="2026" data-etapa="La derogación definitiva en el Congreso">
-              <span aria-hidden="true" class="punto absolute -left-[31px] sm:-left-[47px] top-2 w-3.5 h-3.5 rounded-full bg-naranja"></span>
-              <p class="font-display text-naranja text-2xl lg:hidden mb-1">Hoy</p>
-              <p class="rotulo text-white/45 text-xs mb-2 hidden lg:block">Presente</p>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3">El proyecto llega al Congreso</h3>
-              <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl mb-5">Con la asunción de los nuevos legisladores, el Gobierno anuncia el envío del proyecto de derogación definitiva. El PRIHA presenta el 4.° informe del Observatorio en el debate en comisiones.</p>
-              <a href="#observatorio" class="inline-flex items-center gap-2 text-naranja hover:text-white font-semibold text-sm transition-colors">
-                Ver qué está en juego <i class="fa-solid fa-arrow-up text-xs" aria-hidden="true"></i>
-              </a>
-            </li>
-
-          </ol>
-        </div>
-
-        <!-- Cierre argumental -->
-        <div class="mt-16 sm:mt-20 max-w-3xl border-l-2 border-salvia pl-6 reveal">
-          <p class="text-lg sm:text-2xl font-display leading-snug text-white/90 mb-4">Definir qué se puede vender y qué no, y bajo qué reglas, no es una cuestión administrativa: ordena el acceso a recursos centrales para la vida cotidiana y para cualquier proyecto de desarrollo.</p>
-          <p class="text-white/60 text-sm leading-relaxed">Desarmar protecciones que se sostuvieron durante décadas sobre una visión de largo plazo del territorio no es una decisión neutral: reconfigura quién decide, quién accede y quién queda afuera en los espacios más sensibles del país.</p>
-        </div>
+          </div>
+        </details>
 
       </div>
     </section>
+
 
     <!-- ============ QUIENES SOMOS ============ -->
     <section id="quienes-somos" aria-labelledby="h-quienes" class="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -1458,42 +1454,42 @@
 
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0">
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">PV</p>
+            <p aria-hidden="true" class="avatar-iniciales">PV<img src="img/equipo/pablo-volkind.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Pablo Volkind</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Director del PRIHA · Investigador UBA/CLACSO</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Profesor de grado y posgrado FCE / FFyL (UBA). Coordinador del GT CLACSO «Historias Agrarias».</p>
             <a href="mailto:pvolkind@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> pvolkind@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">MO</p>
+            <p aria-hidden="true" class="avatar-iniciales">MO<img src="img/equipo/matias-oberlin-molina.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Matías Oberlin Molina</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Dr. en Historia · Becario posdoctoral CONICET</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Docente en UNPAZ y en el Profesorado de Historia Alicia Moreau de Justo.</p>
             <a href="mailto:matiasoberlin@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> matiasoberlin@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">GE</p>
+            <p aria-hidden="true" class="avatar-iniciales">GE<img src="img/equipo/gabriela-elias.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Gabriela Elias</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Profesora de Historia (FFyL-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Integrante del Observatorio de Tierras (PRIHA-UBA).</p>
             <a href="mailto:profegabrielaelias@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> profegabrielaelias@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">MI</p>
+            <p aria-hidden="true" class="avatar-iniciales">MI<img src="img/equipo/maia-sol-ilutovich.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Maia Sol Ilutovich</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Maestranda en Historia Económica (FCE-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Profesora en Historia (ISP-JVG) e integrante del Observatorio de Tierras.</p>
             <a href="mailto:maiailutovich15@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> maiailutovich15@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">MM</p>
+            <p aria-hidden="true" class="avatar-iniciales">MM<img src="img/equipo/micaela-medero-larrosa.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Micaela Medero Larrosa</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Prof. de Educación Superior en Historia</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Licenciatura en Historia Latinoamericana en curso (UNDAV). Docente de nivel medio.</p>
             <a href="mailto:micaelamederol@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> micaelamederol@gmail.com</a>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">TA</p>
+            <p aria-hidden="true" class="avatar-iniciales">TA<img src="img/equipo/thomas-artopoulos.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
             <h4 class="font-bold text-lg">Thomas Artopoulos</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Profesor de Historia (FFyL-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Especialista en geografía histórica y Sistemas de Información Geográfica (GIS).</p>
@@ -1572,7 +1568,6 @@
           <p class="rotulo text-ladrillo text-xs mb-2">Producción académica</p>
           <h2 id="h-publicaciones" class="text-3xl sm:text-4xl font-bold">Últimas publicaciones</h2>
         </div>
-
         <ul class="space-y-4 list-none p-0">
           <li class="tarjeta bg-white p-5 sm:p-6 rounded-2xl border border-linea flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 reveal">
             <div>
@@ -1581,7 +1576,7 @@
               <p class="text-sm text-tinta/60 mt-1">Volkind, Pablo</p>
             </div>
             <a href="https://periodicos.ufsc.br/index.php/mundosdotrabalho/article/view/107637/60796" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
-              Leer artículo<span class="sr-only">: El secreto de la competitividad argentin</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              Leer artículo<span class="sr-only">: El secreto de la competitividad argentina</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
           <li class="tarjeta bg-white p-5 sm:p-6 rounded-2xl border border-linea flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 reveal">
@@ -1614,6 +1609,27 @@
               Leer artículo<span class="sr-only">: Tejiendo identidad: recuperando la histo</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
             </a>
           </li>
+          <li class="tarjeta bg-white p-5 sm:p-6 rounded-2xl border border-linea flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 reveal">
+            <div>
+              <p class="rotulo text-ladrillo text-xs mb-1">Travesía · 2024</p>
+              <h3 class="font-bold text-base sm:text-lg leading-snug">Claroscuros del crecimiento agro-pecuario en la región pampeana durante la etapa agroexportadora (1880-1914)</h3>
+              <p class="text-sm text-tinta/60 mt-1">Volkind, Pablo</p>
+            </div>
+            <a href="https://travesia.ct.unt.edu.ar/article/view/459/453" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+              Leer artículo<span class="sr-only">: Claroscuros del crecimiento agro-pecuario en la región pampeana durante la etapa agroexportadora (1880-1914)</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="tarjeta bg-white p-5 sm:p-6 rounded-2xl border border-linea flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 reveal">
+            <div>
+              <p class="rotulo text-ladrillo text-xs mb-1">Revista Interdisciplinaria de Estudios Sociales · 2023</p>
+              <h3 class="font-bold text-base sm:text-lg leading-snug">La persistencia de la gran propiedad territorial en la Provincia de Buenos Aires durante la etapa agroexportadora: aportes para el debate</h3>
+              <p class="text-sm text-tinta/60 mt-1">Volkind, Pablo y Renato, Rosario</p>
+            </div>
+            <a href="https://ceiso.com.ar/ries/index.php/ojs/article/view/147/volkind-renato-pdf27" target="_blank" rel="noopener noreferrer" class="text-ladrillo hover:text-tinta font-semibold text-sm inline-flex items-center gap-1.5 shrink-0 self-end sm:self-center transition-colors">
+              Leer artículo<span class="sr-only">: La persistencia de la gran propiedad territorial en la Provincia de Buenos Aires durante la etapa agroexportadora: aportes para el debate</span><i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+          </li>
+
         </ul>
       </div>
     </section>
@@ -1621,22 +1637,19 @@
     <!-- ============ ACTIVIDADES ============ -->
     <section id="actividades" aria-labelledby="h-actividades" class="bg-white border-y border-linea py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto reveal">
-        <p class="rotulo text-ladrillo text-xs mb-2">Agenda y encuentros</p>
-        <h2 id="h-actividades" class="text-3xl sm:text-4xl font-bold mb-10">Actividades y seminarios</h2>
-        <ul class="grid md:grid-cols-3 gap-6 list-none p-0">
-          <li class="tarjeta bg-hueso p-6 rounded-2xl border border-linea">
-            <p class="rotulo text-ladrillo text-xs mb-2">Senado de la Nación · 2026</p>
-            <h3 class="font-bold text-lg leading-snug">Debate en comisiones sobre la ley de propiedad privada y presentación del 4.° informe del Observatorio</h3>
-          </li>
-          <li class="tarjeta bg-hueso p-6 rounded-2xl border border-linea">
-            <p class="rotulo text-ladrillo text-xs mb-2">I Encuentro Territorio en Diálogo</p>
-            <h3 class="font-bold text-lg leading-snug">Ciencias, tecnologías e historia socioambiental (UNQ)</h3>
-          </li>
-          <li class="tarjeta bg-hueso p-6 rounded-2xl border border-linea">
-            <p class="rotulo text-ladrillo text-xs mb-2">VIII Congreso Latinoamericano de Historia Económica</p>
-            <h3 class="font-bold text-lg leading-snug">Coordinación de mesas y exposiciones en Montevideo, Uruguay</h3>
-          </li>
-        </ul>
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="rotulo text-ladrillo text-xs mb-2">Agenda y encuentros</p>
+            <h2 id="h-actividades" class="text-3xl sm:text-4xl font-bold">Actividades y seminarios</h2>
+          </div>
+          <p id="act-cuenta" class="rotulo text-[10px] text-tinta/40"></p>
+        </div>
+
+        <!-- Las tarjetas se dibujan desde el JSON de abajo. Para sumar una actividad
+             alcanza con agregarle un objeto; la foto es opcional y si falta queda el icono. -->
+        <ul id="act-grilla" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 list-none p-0"></ul>
+
+        <script type="application/json" id="act-datos">[{"cat": "Encuentro", "fecha": "2026", "titulo": "I Encuentro «Territorio en Diálogo»", "detalle": "Ciencias, tecnologías e historia socioambiental. Universidad Nacional de Quilmes.", "foto": "img/actividades/territorio-en-dialogo.jpg", "icono": "fa-people-group"}, {"cat": "Clase pública", "fecha": "2026", "titulo": "«La universidad y la ciencia, ¿salen caras?»", "detalle": "Clase pública en Plaza de Mayo por el Día del Investigador y la Investigadora, a cargo de Pablo Volkind y Adriana Serkis.", "foto": "img/actividades/dia-del-investigador.jpg", "icono": "fa-bullhorn"}, {"cat": "Senado de la Nación", "fecha": "15 de abril de 2026", "titulo": "Debate sobre el proyecto de ley «de inviolabilidad de la propiedad privada»", "detalle": "Participación en el debate de las comisiones de Asuntos Constitucionales y Legislación General del Senado de la Nación.", "foto": "img/actividades/senado-propiedad-privada.jpg", "icono": "fa-landmark"}, {"cat": "Senado de la Nación", "fecha": "24 de junio de 2026", "titulo": "El cuarto informe del Observatorio ante Ciencia y Técnica", "detalle": "Participación en la comisión de Ciencia y Técnica del Senado para debatir sobre el cuarto informe del Observatorio de Tierras.", "foto": "img/actividades/senado-ciencia-y-tecnica.jpg", "icono": "fa-landmark"}, {"cat": "Charla", "fecha": "", "titulo": "«Debates sobre la reforma agraria en Uruguay»", "detalle": "El papel del Instituto Nacional de Colonización. A cargo del Dr. Agustín Juncal.", "foto": "img/actividades/juncal-uruguay.jpg", "icono": "fa-chalkboard-user"}, {"cat": "Congreso", "fecha": "2026", "titulo": "VIII Congreso Latinoamericano de Historia Económica", "detalle": "Coordinación de mesas y exposiciones. Montevideo, Uruguay.", "foto": "img/actividades/cladhe-montevideo.jpg", "icono": "fa-users-rectangle"}, {"cat": "Charla", "fecha": "", "titulo": "«Soberanía alimentaria, autonomía agraria y organización comunitaria»", "detalle": "¿Una ecuación posible en el México de hoy? A cargo de la Dra. Julieta Mellano.", "foto": "img/actividades/mellano-soberania.jpg", "icono": "fa-chalkboard-user"}, {"cat": "Seminario interno", "fecha": "", "titulo": "«Problemas y debates de la historia agraria argentina y latinoamericana»", "detalle": "Seminario interno de formación y discusión del Programa.", "foto": "img/actividades/seminario-interno.jpg", "icono": "fa-comments"}, {"cat": "Conversatorio", "fecha": "22 de mayo", "titulo": "«Historia del mundo rural: Brasil y Argentina en el siglo XIX»", "detalle": "Con la Dra. María Verónica Secreto.", "foto": "img/actividades/secreto-mundo-rural.jpg", "icono": "fa-comments"}, {"cat": "Conversatorio", "fecha": "29 de mayo", "titulo": "«La reforma agraria en México: entre el Estado y la Revolución»", "detalle": "Con la Dra. Julieta Mellano.", "foto": "img/actividades/mellano-reforma-agraria.jpg", "icono": "fa-comments"}, {"cat": "Congreso", "fecha": "24 al 27 de noviembre de 2025", "titulo": "Coordinación de la mesa «Tierra y territorios en crisis»", "detalle": "Conflictos, usos y normativas desde una perspectiva histórica en América Latina. II Congreso de la Asociación Latinoamericana de Historia Rural, Universidad Nacional de Costa Rica, Heredia.", "foto": "img/actividades/alhr-mesa-tierra.jpg", "icono": "fa-users-rectangle"}, {"cat": "Ponencia", "fecha": "24 al 27 de noviembre de 2025", "titulo": "«Derechos de propiedad y conflictos en torno a la tierra»", "detalle": "El caso de la región pampeana durante la etapa agroexportadora (Argentina, 1880-1930), por Pablo Volkind. II Congreso de la Asociación Latinoamericana de Historia Rural, Universidad Nacional de Costa Rica, Heredia.", "foto": "img/actividades/volkind-derechos-propiedad.jpg", "icono": "fa-book-open"}]</script>
       </div>
     </section>
 
@@ -1718,7 +1731,7 @@
       <div>
         <h2 class="rotulo text-naranja text-xs mb-4">Redes</h2>
         <ul class="flex gap-3 list-none p-0">
-          <li><a href="https://x.com/priha_fce" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 hover:bg-naranja rounded-xl flex items-center justify-center transition-all hover:-translate-y-1"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">X (se abre en una pestaña nueva)</span></a></li>
+          <li><a href="https://x.com/priha_fce" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 hover:bg-naranja rounded-xl flex items-center justify-center transition-all hover:-translate-y-1"><svg viewBox="0 0 512 512" class="w-[0.95em] h-[0.95em] inline-block align-[-0.1em] fill-current" aria-hidden="true" focusable="false"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg><span class="sr-only">X (se abre en una pestaña nueva)</span></a></li>
           <li><a href="https://instagram.com/priha_fce" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 hover:bg-naranja rounded-xl flex items-center justify-center transition-all hover:-translate-y-1"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram (se abre en una pestaña nueva)</span></a></li>
         </ul>
       </div>
@@ -1749,6 +1762,86 @@
         }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
         reveals.forEach(function (el) { obsReveal.observe(el); });
       }
+
+      /* ============ 1b. Novedades: el carrusel se dibuja desde el JSON ============ */
+      // Una sola fuente de verdad: #nov-datos. Las tarjetas del carrusel y las del
+      // explorador salen de ahi, asi que sumar una novedad es sumar un objeto.
+      var datosNov = null;
+      try {
+        var scriptNov = document.getElementById('nov-datos');
+        if (scriptNov) datosNov = JSON.parse(scriptNov.textContent);
+      } catch (eNov) { datosNov = null; }
+
+      function escHtml(t) {
+        return String(t == null ? '' : t)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+      function textoPlano(html) {
+        var d = document.createElement('div');
+        d.innerHTML = html || '';
+        return (d.textContent || '').trim();
+      }
+      function resumenNov(n) {
+        if (n.resumen) return n.resumen;
+        var t = textoPlano(n.cuerpo);
+        return t.length > 165 ? t.slice(0, 165).replace(/\s+\S*$/, '') + '…' : t;
+      }
+      function miniaturaNov(n, tamIcono) {
+        return (n.img ? '<img src="' + escHtml(n.img) + '" alt="" loading="lazy" decoding="async"' +
+                        ' onerror="this.style.display=&quot;none&quot;"' +
+                        ' class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">' : '') +
+               '<span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true">' +
+               '<i class="fa-solid ' + escHtml(n.icono || 'fa-image') + ' ' + tamIcono + '"></i></span>';
+      }
+
+      (function dibujarCarrusel() {
+        var pistaNov = document.getElementById('nov-pista');
+        if (!pistaNov || !datosNov || !datosNov.length) return;
+        pistaNov.innerHTML = datosNov.map(function (n, i) {
+          return '<article class="novedad-card tarjeta bg-white rounded-2xl border border-linea overflow-hidden flex flex-col shrink-0" data-novedad="' + i + '">' +
+            '<button type="button" class="novedad-abrir relative block aspect-[124/100] bg-hueso overflow-hidden group text-left w-full" aria-haspopup="dialog">' +
+              miniaturaNov(n, 'text-4xl') +
+            '</button>' +
+            '<div class="p-5 flex flex-col flex-1">' +
+              '<p class="rotulo text-ladrillo text-[10px] mb-2">' + escHtml(n.cat) + '</p>' +
+              '<h3 class="font-bold text-lg leading-snug mb-2"><button type="button" class="novedad-abrir text-left hover:text-ladrillo transition-colors" aria-haspopup="dialog">' + escHtml(n.titulo) + '</button></h3>' +
+              '<p class="text-xs text-tinta/50 mb-3">' + escHtml(n.fecha) + '</p>' +
+              '<p class="text-sm text-tinta/70 leading-relaxed line-clamp-3">' + escHtml(resumenNov(n)) + '</p>' +
+            '</div>' +
+          '</article>';
+        }).join('');
+      })();
+
+      /* ============ 1c. Actividades ============ */
+      (function dibujarActividades() {
+        var grilla = document.getElementById('act-grilla');
+        var datos = null;
+        try {
+          var sc = document.getElementById('act-datos');
+          if (sc) datos = JSON.parse(sc.textContent);
+        } catch (eAct) { datos = null; }
+        if (!grilla || !datos || !datos.length) return;
+
+        grilla.innerHTML = datos.map(function (a) {
+          var meta = [a.cat, a.fecha].filter(Boolean).join(' · ');
+          return '<li class="tarjeta bg-hueso p-5 rounded-2xl border border-linea flex gap-4 items-start">' +
+            '<span class="act-foto">' +
+              (a.foto ? '<img src="' + escHtml(a.foto) + '" alt="" loading="lazy" decoding="async"' +
+                        ' onerror="if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}">' : '') +
+              '<i class="fa-solid ' + escHtml(a.icono || 'fa-calendar-day') + ' text-xl" aria-hidden="true"></i>' +
+            '</span>' +
+            '<span class="min-w-0">' +
+              '<span class="rotulo text-ladrillo text-[10px] block mb-1.5">' + escHtml(meta) + '</span>' +
+              '<span class="font-bold text-[15px] leading-snug block mb-1.5">' + escHtml(a.titulo) + '</span>' +
+              '<span class="text-sm text-tinta/65 leading-relaxed block">' + escHtml(a.detalle) + '</span>' +
+            '</span>' +
+          '</li>';
+        }).join('');
+
+        var cuenta = document.getElementById('act-cuenta');
+        if (cuenta) cuenta.textContent = datos.length + ' actividades registradas';
+      })();
 
       /* ============ 2. Observatorio: pestanas accesibles ============ */
       var listaTabs = document.querySelector('[role="tablist"]');
@@ -1832,7 +1925,6 @@
       } else {
         hitos.forEach(function (h) { h.classList.add('en-foco'); });
       }
-
 
       /* ============ 5. Mapa del Observatorio: tooltip por departamento ============ */
       var mapaSvg = document.getElementById('mapa-svg');
@@ -1936,6 +2028,29 @@
       if (anchoXL.addEventListener) anchoXL.addEventListener('change', alCambiar);
       else anchoXL.addListener(alCambiar);
 
+      /* ============ 5b. Cronologia desplegable ============ */
+      // Si se llega por el ancla (#cronologia desde el menu o desde un enlace
+      // compartido) hay que abrirla, si no el usuario aterriza en un titulo cerrado.
+      var crono = document.getElementById('cronologia');
+      if (crono) {
+        var abrirCrono = function (hacerFoco) {
+          if (crono.open) return;
+          crono.open = true;
+          if (hacerFoco) {
+            requestAnimationFrame(function () {
+              crono.scrollIntoView({ behavior: sinMovimiento ? 'auto' : 'smooth', block: 'start' });
+            });
+          }
+        };
+        if (location.hash === '#cronologia') abrirCrono(false);
+        window.addEventListener('hashchange', function () {
+          if (location.hash === '#cronologia') abrirCrono(true);
+        });
+        document.querySelectorAll('a[href="#cronologia"]').forEach(function (a) {
+          a.addEventListener('click', function () { abrirCrono(false); });
+        });
+      }
+
       /* ============ 6. Barra de progreso + parallax del hero ============ */
       var barraProgreso = document.getElementById('barra-progreso');
       var heroFondo = document.getElementById('hero-fondo');
@@ -1967,7 +2082,7 @@
       actualizarScroll(); // estado inicial, por si la pagina carga con scroll restaurado
 
       /* ============ 7. Resaltado del item de menu activo ============ */
-      var idsSecciones = ['novedades', 'observatorio', 'cronologia', 'quienes-somos', 'lineas',
+      var idsSecciones = ['novedades', 'observatorio', 'quienes-somos', 'lineas',
                            'publicaciones', 'actividades', 'prensa'];
       var seccionesNav = idsSecciones
         .map(function (id) { return document.getElementById(id); })
@@ -2041,11 +2156,6 @@
 
       /* ============ 9. Modal de novedades ============ */
       var modal = document.getElementById('nov-modal');
-      var datosNov = null;
-      try {
-        var scriptDatos = document.getElementById('nov-datos');
-        if (scriptDatos) datosNov = JSON.parse(scriptDatos.textContent);
-      } catch (e) { datosNov = null; }
 
       if (modal && datosNov) {
         var mImg = modal.querySelector('#nov-modal-img img');
@@ -2054,6 +2164,7 @@
         var mTitulo = document.getElementById('nov-modal-titulo');
         var mFecha = document.getElementById('nov-modal-fecha');
         var mCuerpo = document.getElementById('nov-modal-cuerpo');
+        var mAcciones = document.getElementById('nov-modal-acciones');
         var btnCerrar = document.getElementById('nov-modal-cerrar');
         var fondo = document.getElementById('nov-modal-fondo');
         var todas = document.getElementById('nov-todas');
@@ -2066,6 +2177,20 @@
           mTitulo.textContent = n.titulo || '';
           mFecha.textContent = n.fecha || '';
           mCuerpo.innerHTML = n.cuerpo || '';
+          // Los informes del Observatorio llevan enlace al documento completo
+          if (mAcciones) {
+            if (n.enlace) {
+              mAcciones.innerHTML = '<a href="' + escHtml(n.enlace) + '" target="_blank" rel="noopener noreferrer"' +
+                ' class="inline-flex items-center gap-2 bg-tinta hover:bg-ladrillo text-white font-semibold px-6 py-3.5 rounded-xl transition-colors">' +
+                '<i class="fa-solid fa-arrow-up-right-from-square text-sm" aria-hidden="true"></i>' +
+                escHtml(n.enlaceTexto || 'Abrir el documento') +
+                '<span class="sr-only">(se abre en una pestaña nueva)</span></a>';
+              mAcciones.classList.remove('hidden');
+            } else {
+              mAcciones.innerHTML = '';
+              mAcciones.classList.add('hidden');
+            }
+          }
           if (n.img) {
             mImg.src = n.img; mImg.style.display = ''; mImgWrap.style.display = '';
           } else {
@@ -2118,16 +2243,7 @@
           var catActiva = 'todas';
           var focoPrevio = null;
 
-          function escapar(t) {
-            return String(t == null ? '' : t)
-              .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-          }
-          function sinTags(html) {
-            var d = document.createElement('div');
-            d.innerHTML = html || '';
-            return d.textContent || '';
-          }
+          var escapar = escHtml, sinTags = textoPlano;
           function normalizar(t) {
             // saca acentos para que "publicacion" encuentre "publicación"
             return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -2157,13 +2273,15 @@
               visibles++;
               html += '<button type="button" data-i="' + i + '" class="nt-card group text-left bg-white rounded-2xl border border-linea overflow-hidden flex flex-col hover:border-ladrillo hover:-translate-y-1 transition-all" aria-haspopup="dialog">' +
                 '<span class="relative block aspect-[124/100] bg-hueso overflow-hidden">' +
-                  (n.img ? '<img src="' + escapar(n.img) + '" alt="" loading="lazy" decoding="async" onerror="this.style.display=\'none\'" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">' : '') +
-                  '<span class="absolute inset-0 flex items-center justify-center text-tinta/20" aria-hidden="true"><i class="fa-solid fa-image text-3xl"></i></span>' +
+                  miniaturaNov(n, 'text-3xl') +
                 '</span>' +
                 '<span class="p-4 flex flex-col flex-1">' +
                   '<span class="rotulo text-ladrillo text-[10px] mb-1.5 block">' + escapar(n.cat) + '</span>' +
                   '<span class="font-bold text-base leading-snug mb-2 block group-hover:text-ladrillo transition-colors">' + escapar(n.titulo) + '</span>' +
-                  '<span class="text-xs text-tinta/50 mt-auto block">' + escapar(n.fecha) + '</span>' +
+                  '<span class="text-xs text-tinta/60 leading-relaxed mb-3 block">' + escapar(resumenNov(n)) + '</span>' +
+                  '<span class="text-xs text-tinta/45 mt-auto block flex items-center gap-2">' + escapar(n.fecha) +
+                    (n.enlace ? '<i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-ladrillo" aria-hidden="true"></i>' : '') +
+                  '</span>' +
                 '</span>' +
               '</button>';
             });

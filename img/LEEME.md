@@ -8,6 +8,8 @@
 | `logo_fce.png` | Sello de la Facultad, recortado del original naranja |
 | `og-priha.jpg` | Vista previa 1200×630 para redes sociales |
 | `novedades/` | Fotos de las tarjetas de Novedades |
+| `equipo/` | Fotos de las y los integrantes (ver `equipo/LEEME.md`) |
+| `actividades/` | Fotos circulares de las actividades (ver `actividades/LEEME.md`) |
 | `_originales/` | Archivos fuente sin procesar. No se usan en el sitio. |
 
 ## Novedades
