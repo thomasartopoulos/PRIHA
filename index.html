@@ -244,18 +244,53 @@
 
   <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-tinta focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Ir al contenido principal</a>
 
+  <!-- ============ FRANJA INSTITUCIONAL ============ -->
+  <!-- No es sticky a proposito: se va con el scroll y deja el header limpio.
+       Da la pertenencia a la Facultad de forma explicita, sin robarle
+       espacio a la navegacion. -->
+  <div class="bg-tinta text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+      <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-3 group">
+        <img src="logo_fce.png" alt="" aria-hidden="true" width="640" height="371" decoding="async"
+             class="h-7 w-auto shrink-0 object-contain">
+        <span class="rotulo text-[10px] sm:text-xs text-white/75 group-hover:text-naranja transition-colors leading-tight">
+          Universidad de Buenos Aires<span class="hidden sm:inline"> &middot; </span><br class="sm:hidden">Facultad de Ciencias Econ&oacute;micas
+        </span>
+      </a>
+      <a href="mailto:priha@economicas.uba.ar"
+         class="hidden md:inline-flex items-center gap-2 rotulo text-xs text-white/55 hover:text-naranja transition-colors">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i> priha@economicas.uba.ar
+      </a>
+    </div>
+  </div>
+
   <!-- ============ HEADER ============ -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-linea">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-6">
 
-      <!-- El logotipo ya contiene el nombre completo: no se repite en texto -->
-      <a href="#" class="shrink-0">
-        <img src="logo_priha.jpg" alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
-             width="1200" height="270" decoding="async"
-             class="h-8 sm:h-10 w-auto object-contain">
-      </a>
+      <!-- Lockup institucional. El logotipo del PRIHA ya contiene el nombre completo,
+           por eso no se repite en texto. La divisoria deja claro que son dos marcas
+           distintas y no un solo logotipo.
+           El sello de la Facultad se oculta justo en el breakpoint xl, que es donde
+           entra la navegacion completa y el ancho queda al limite; vuelve en 2xl.
+           La franja de arriba lo sostiene en todos los tamaños. -->
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+        <a href="#" aria-label="PRIHA · volver al inicio">
+          <img src="logo_priha.jpg" alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
+               width="1200" height="270" decoding="async"
+               class="h-8 sm:h-10 w-auto object-contain">
+        </a>
+        <span aria-hidden="true" class="hidden sm:block xl:hidden 2xl:block w-px h-9 bg-linea"></span>
+        <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
+           class="hidden sm:block xl:hidden 2xl:block hover:opacity-75 transition-opacity">
+          <img src="logo_fce.png" alt="Facultad de Ciencias Económicas · UBA (se abre en una pestaña nueva)"
+               width="640" height="371" decoding="async"
+               class="h-8 lg:h-9 w-auto object-contain">
+        </a>
+      </div>
 
-      <nav aria-label="Navegación principal" class="hidden xl:flex items-center gap-5 2xl:gap-7 text-sm font-semibold">
+      <nav aria-label="Navegación principal" class="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-semibold">
         <a href="#novedades" class="hover:text-ladrillo transition-colors py-1">Novedades</a>
         <a href="#observatorio" class="hover:text-ladrillo transition-colors py-1">Observatorio</a>
         <a href="#cronologia" class="hover:text-ladrillo transition-colors py-1">Cronología</a>
@@ -303,11 +338,23 @@
            overflow-hidden en la seccion recorta el sobrante. -->
       <div id="hero-fondo" aria-hidden="true" class="absolute left-0 right-0 textura-geodesica opacity-[0.13]" style="top:-15%; bottom:-15%;"></div>
       <div class="max-w-5xl mx-auto text-center relative z-10">
-        <p class="rotulo inline-block border border-naranja/50 text-naranja text-xs px-4 py-1.5 rounded-full mb-7">Investigación · Enseñanza · Difusión</p>
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">Historia agraria argentina<br class="hidden sm:block"> y latinoamericana</h1>
-        <p class="text-white/80 text-base sm:text-xl max-w-2xl mx-auto mb-9 leading-relaxed">
-          Estudiamos las problemáticas rurales del pasado para comprender el presente y aportar conocimiento sólido sobre la disputa por la tierra.
-        </p>
+        <p class="rotulo inline-block border border-naranja/50 text-naranja text-xs px-4 py-1.5 rounded-full mb-8 sm:mb-10">Investigación · Enseñanza · Difusión</p>
+        <!-- El logotipo ES el titulo de la portada. La version blanca tiene fondo
+             transparente para apoyarse sobre el tinta del hero; el alt cumple
+             la funcion del h1 para buscadores y lectores de pantalla. -->
+        <h1 class="mb-10 sm:mb-12">
+          <!-- Dos versiones del mismo logotipo: la apilada en telefono (si se usara
+               la horizontal, la bajada "PROGRAMA DE INVESTIGACIONES SOBRE HISTORIA
+               AGRARIA" quedaria en 6 px y no se leeria) y la horizontal de sm hacia
+               arriba. Solo una se descarga: la otra queda con display:none. -->
+          <img src="logo_priha_blanco_apilado.png"
+               alt="PRIHA · Programa de Investigaciones sobre Historia Agraria"
+               width="900" height="618" fetchpriority="high" decoding="async"
+               class="sm:hidden w-full max-w-[17rem] h-auto mx-auto">
+          <img src="logo_priha_blanco.png" alt="" aria-hidden="true"
+               width="1600" height="216" fetchpriority="high" decoding="async"
+               class="hidden sm:block w-full max-w-xl lg:max-w-3xl h-auto mx-auto">
+        </h1>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="#observatorio" class="w-full sm:w-auto bg-naranja hover:bg-white text-tinta font-semibold px-7 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-2">
             <i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Explorar el Observatorio
@@ -1592,9 +1639,14 @@
   <footer id="contacto" class="bg-tinta text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <img src="logo_priha.jpg" alt="PRIHA" width="1200" height="270" loading="lazy" decoding="async"
-             class="h-8 w-auto object-contain mb-4 bg-white rounded px-2 py-1">
-        <p class="text-white/60 text-sm leading-relaxed">Programa de Investigaciones sobre Historia Agraria. Facultad de Ciencias Económicas, Universidad de Buenos Aires.</p>
+        <img src="logo_priha_blanco.png" alt="PRIHA" width="1600" height="216" loading="lazy" decoding="async"
+             class="h-9 w-auto object-contain mb-4">
+        <p class="text-white/60 text-sm leading-relaxed mb-6">Programa de Investigaciones sobre Historia Agraria. Facultad de Ciencias Económicas, Universidad de Buenos Aires.</p>
+        <a href="https://www.economicas.uba.ar" target="_blank" rel="noopener noreferrer"
+           class="inline-block hover:opacity-75 transition-opacity">
+          <img src="logo_fce.png" alt="Facultad de Ciencias Económicas · Universidad de Buenos Aires (se abre en una pestaña nueva)"
+               width="640" height="371" loading="lazy" decoding="async" class="h-10 w-auto object-contain">
+        </a>
       </div>
       <div>
         <h2 class="rotulo text-naranja text-xs mb-4">Ubicación</h2>
