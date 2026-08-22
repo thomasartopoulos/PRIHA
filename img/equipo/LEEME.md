@@ -11,6 +11,8 @@ Sirve `.jpg` o `.png`: el sitio prueba primero el `.jpg` y si no está, el `.png
 | `maia-sol-ilutovich.jpg` | Maia Sol Ilutovich |
 | `micaela-medero-larrosa.jpg` | Micaela Medero Larrosa |
 | `thomas-artopoulos.jpg` | Thomas Artopoulos |
+| `julieta-caggiano.jpg` | Julieta Caggiano |
+| `luciana-diaz.jpg` | Luciana Díaz |
 
 ## Cómo tienen que ser
 

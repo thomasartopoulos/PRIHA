@@ -403,14 +403,10 @@
                width="1600" height="216" fetchpriority="high" decoding="async"
                class="hidden sm:block w-full max-w-xl lg:max-w-3xl h-auto mx-auto">
         </h1>
-        <div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4">
+        <div class="flex justify-center">
           <a href="https://thomasartopoulos.github.io/mapa_extranjerizacion/" target="_blank" rel="noopener noreferrer"
              class="w-full sm:w-auto bg-naranja hover:bg-white text-tinta font-semibold px-8 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-2.5 text-lg">
-            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Mapa interactivo<span class="sr-only">(se abre en una pestaña nueva)</span>
-          </a>
-          <a href="#observatorio"
-             class="w-full sm:w-auto border border-white/40 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-2.5 text-lg">
-            <i class="fa-solid fa-earth-americas" aria-hidden="true"></i> Observatorio de Tierras
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Mapa de extranjerización<span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
         </div>
       </div>
@@ -421,24 +417,26 @@
       <!-- Pastizal: la convencion cartografica para tierra de pastura -->
       <div aria-hidden="true" class="absolute inset-0 textura-pastizal opacity-[0.11]"></div>
       <div class="relative z-10 max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
         <div class="reveal">
-          <h2 id="h-quienes" class="sr-only">Sobre el PRIHA</h2>
-          <p class="text-tinta/85 text-base sm:text-lg leading-relaxed mb-5">El Programa de Investigaciones sobre Historia Agraria (PRIHA) está conformado por docentes, investigadores, estudiantes y graduados orientados al estudio de las transformaciones sociales, económicas, políticas y culturales del mundo rural argentino y latinoamericano.</p>
-          <p class="text-tinta/75 text-sm sm:text-base leading-relaxed mb-5">Desde una perspectiva científica, plural y democrática, priorizamos las necesidades de las grandes mayorías populares como eje del desarrollo sectorial.</p>
-          <p class="text-tinta/75 text-sm sm:text-base leading-relaxed">Asimismo, buscamos aportar al conocimiento del pasado agrario para disponer de herramientas precisas que permitan comprender el presente y transformar los espacios rurales bajo principios de bienestar social, soberanía nacional y cuidado de los recursos naturales.</p>
+          <p class="rotulo text-ladrillo text-xs mb-2">Sobre el PRIHA</p>
+          <h2 id="h-quienes" class="text-3xl sm:text-4xl font-bold mb-6">Un espacio crítico de pensamiento rural</h2>
+          <p class="text-tinta/75 text-sm sm:text-base mb-4 leading-relaxed">El Programa de Investigaciones sobre Historia Agraria está conformado por docentes, personas graduadas, estudiantes e investigadoras/es. Estudiamos las transformaciones sociales, económicas, políticas y culturales del mundo rural desde fines del siglo XIX, asumiendo los intereses de las mayorías populares.</p>
+          <p class="text-tinta/75 text-sm sm:text-base mb-6 leading-relaxed">Nuestra mirada se centra en la historia social agraria, entendiendo lo «social» como el punto de encuentro de las dimensiones de toda historia: la economía, la política, la cultura y la organización de la vida cotidiana.</p>
+          <blockquote class="p-5 bg-salvia/20 border-l-4 border-salvia rounded-r-xl">
+            <p class="text-sm text-tinta leading-relaxed italic">«Buscamos estudiar la particularidad de cada sector social en un territorio concreto, en diálogo permanente con la historia general argentina y latinoamericana.»</p>
+          </blockquote>
         </div>
 
         <div class="tarjeta bg-white p-6 sm:p-8 rounded-2xl border border-linea reveal">
           <h3 class="text-xl font-bold mb-6 flex items-center gap-3"><i class="fa-solid fa-bullseye text-naranja text-2xl" aria-hidden="true"></i> Objetivos del Programa</h3>
           <ul class="space-y-4 text-sm text-tinta/75 list-none p-0">
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Analizar</strong> las transformaciones socioeconómicas, productivas y políticas que atravesó el mundo rural argentino y latinoamericano.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Explicar</strong> las tendencias históricas y los procesos agrarios para aportar elementos analíticos a la comprensión del presente y a los debates sobre el desarrollo rural.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Articular</strong> la investigación con la docencia en diversas instituciones académicas de Argentina, América Latina y el resto del mundo.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Fomentar</strong> el trabajo conjunto con la comunidad a partir del desarrollo de proyectos con organizaciones civiles, sociales y sindicales.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Difundir</strong> el conocimiento científico a través de diversos canales y formatos para que la sociedad pueda utilizarlo como un insumo accesible y transformador.</span></li>
-            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Promover</strong> la integración entre teoría y praxis, superando la brecha entre la producción científica y la intervención política o social.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Investigación y docencia:</strong> articular el aprendizaje y la enseñanza permanente entre el ámbito académico e investigativo.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Comprensión histórica:</strong> descubrir procesos y tendencias para pensar históricamente nuestro presente.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Visibilización:</strong> reponer la práctica y la voz de las grandes masas rurales invisibilizadas.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Transferencia a la sociedad:</strong> difundir producciones científicas en diálogo con sindicatos y organizaciones civiles.</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-naranja mt-1 shrink-0" aria-hidden="true"></i><span><strong class="text-tinta">Compromiso social:</strong> aportar a romper las barreras entre pensar y hacer, entre ciencia y política.</span></li>
           </ul>
         </div>
       </div>
@@ -452,7 +450,7 @@
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0">
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
             <p aria-hidden="true" class="avatar-iniciales">PV<img src="img/equipo/pablo-volkind.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
-            <h4 class="font-bold text-lg">Dr. Pablo Volkind</h4>
+            <h4 class="font-bold text-lg">Pablo Volkind</h4>
             <p class="text-xs font-semibold text-ladrillo mb-2">Director del PRIHA · Investigador UBA/CLACSO</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Profesor de grado y posgrado FCE / FFyL (UBA). Coordinador del GT CLACSO «Historias Agrarias».</p>
             <a href="mailto:pvolkind@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> pvolkind@gmail.com</a>
@@ -463,13 +461,6 @@
             <p class="text-xs font-semibold text-ladrillo mb-2">Dr. en Historia · Becario posdoctoral CONICET</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Docente en UNPAZ y en el Profesorado de Historia Alicia Moreau de Justo.</p>
             <a href="mailto:matiasoberlin@gmail.com" class="text-xs text-tinta/70 hover:text-ladrillo inline-flex items-center gap-2 transition-colors"><i class="fa-regular fa-envelope" aria-hidden="true"></i> matiasoberlin@gmail.com</a>
-          </li>
-          <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">JC<img src="img/equipo/julieta-caggiano.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
-            <h4 class="font-bold text-lg">Julieta Caggiano</h4>
-            <p class="text-xs font-semibold text-ladrillo mb-2">Licenciada en Sociología · Becaria doctoral en Estudios Territoriales (UNQ)</p>
-            <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Docente en la Universidad de Hurlingham.</p>
-            <p class="text-xs text-tinta/50">Integrante del Observatorio de Tierras</p>
           </li>
           <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
             <p aria-hidden="true" class="avatar-iniciales">GE<img src="img/equipo/gabriela-elias.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
@@ -498,12 +489,6 @@
             <p class="text-xs font-semibold text-ladrillo mb-2">Profesor de Historia (FFyL-UBA)</p>
             <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Especialista en geografía histórica y Sistemas de Información Geográfica (GIS).</p>
             <p class="text-xs text-tinta/50">Integrante del Observatorio de Tierras</p>
-          </li>
-          <li class="tarjeta bg-white p-6 rounded-2xl border border-linea hover:-translate-y-2 reveal">
-            <p aria-hidden="true" class="avatar-iniciales">LD<img src="img/equipo/luciana-diaz.jpg" alt="" loading="lazy" decoding="async" onerror='if(!this.dataset.r){this.dataset.r=1;this.src=this.src.replace(/\.jpg$/,&quot;.png&quot;)}else{this.remove()}'></p>
-            <h4 class="font-bold text-lg">Luciana Díaz</h4>
-            <p class="text-xs font-semibold text-ladrillo mb-2">Estudiante de Economía (UBA)</p>
-            <p class="text-sm text-tinta/65 mb-4 leading-relaxed">Becaria PROPAI.</p>
           </li>
         </ul>
       </div>
