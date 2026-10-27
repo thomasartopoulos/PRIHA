@@ -1894,23 +1894,8 @@
           });
         });
 
-        // Enlace directo al mapa (#mapa, lo usa el QR de priha.ar/links/):
-        // abre la pestana "Donde" y baja hasta el Observatorio
-        var iMapa = tabs.indexOf(document.getElementById('tab-donde'));
-        var abrirMapa = function () {
-          if (location.hash !== '#mapa' || iMapa < 0) return false;
-          activar(iMapa, false);
-          requestAnimationFrame(function () {
-            listaTabs.closest('section').scrollIntoView({ behavior: sinMovimiento ? 'auto' : 'smooth', block: 'start' });
-          });
-          return true;
-        };
-        window.addEventListener('hashchange', abrirMapa);
-
         // Las barras arrancan recien cuando el panel entra en pantalla
-        if (abrirMapa()) {
-          // ya hay una pestana activa: no la pisa el observador
-        } else if (hayIO) {
+        if (hayIO) {
           var contenedor = listaTabs.closest('section');
           var obsBarras = new IntersectionObserver(function (entries, obs) {
             entries.forEach(function (e) {
