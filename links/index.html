@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J624DEVBHB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J624DEVBHB');
+  </script>
+
+  <title>PRIHA · Enlaces</title>
+  <meta name="description" content="Enlaces del PRIHA (FCE-UBA): mapa de extranjerización de tierras, sitio web e Instagram.">
+  <link rel="canonical" href="https://priha.ar/links/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="PRIHA · Enlaces">
+  <meta property="og:description" content="Mapa de extranjerización de tierras, sitio web e Instagram del PRIHA.">
+  <meta property="og:image" content="https://priha.ar/img/og-priha.jpg">
+  <meta property="og:url" content="https://priha.ar/links/">
+
+  <link rel="icon" href="../img/logo_priha.jpg" type="image/jpeg">
+  <meta name="theme-color" content="#2c3d33">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Mismos colores que index.html, muestreados del logo */
+    :root { --tinta:#262425; --naranja:#d77439; --ladrillo:#b85a22; --salvia:#9cbfa7; --campo:#2c3d33; --hueso:#f7f6f4; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; }
+    body {
+      min-height:100vh; display:flex; flex-direction:column; align-items:center;
+      background-color:var(--campo); color:#fff;
+      font-family:'Barlow', ui-sans-serif, system-ui, sans-serif;
+      padding:3rem 1rem 2rem;
+      /* Reticula catastral, como en el fondo del Observatorio */
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:64px 48px, 88px 64px;
+    }
+    main { width:100%; max-width:26rem; text-align:center; }
+    .logo { width:11rem; max-width:60%; height:auto; display:block; margin:0 auto 1.25rem; }
+    .bajada { font-size:.95rem; line-height:1.45; color:rgba(255,255,255,.75); margin:0 0 2rem; }
+    .rotulo { font-family:'Barlow Condensed', sans-serif; text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; color:var(--salvia); }
+
+    ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.85rem; }
+    .enlace {
+      display:flex; align-items:center; gap:1rem; text-align:left;
+      padding:1rem 1.15rem; border-radius:.9rem; text-decoration:none;
+      background:#fff; color:var(--tinta);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .enlace:hover, .enlace:focus-visible { transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.25); }
+    .enlace:focus-visible { outline:3px solid var(--naranja); outline-offset:3px; }
+    .enlace i { font-size:1.35rem; width:1.75rem; text-align:center; color:var(--ladrillo); flex-shrink:0; }
+    .enlace strong { display:block; font-family:'Oswald', 'Arial Narrow', sans-serif; font-weight:500; font-size:1.1rem; letter-spacing:-.01em; }
+    .enlace span { display:block; font-size:.85rem; color:rgba(38,36,37,.7); margin-top:.1rem; }
+    .enlace.destacado { background:var(--naranja); color:#fff; }
+    .enlace.destacado i, .enlace.destacado span { color:#fff; }
+    .enlace.destacado strong { font-weight:700; }
+
+    .redes { margin-top:2rem; display:flex; justify-content:center; }
+    .redes a {
+      width:3.25rem; height:3.25rem; border-radius:1rem; display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.12); color:#fff; font-size:1.6rem; text-decoration:none; transition:background .15s ease;
+    }
+    .redes a:hover, .redes a:focus-visible { background:var(--naranja); }
+    .redes a:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+    .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+    footer { margin-top:auto; padding-top:2.5rem; font-size:.8rem; color:rgba(255,255,255,.55); text-align:center; }
+    @media (prefers-reduced-motion: reduce) { .enlace { transition:none; } .enlace:hover { transform:none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="../img/logo_priha_blanco_apilado.png" width="900" height="618"
+         alt="PRIHA · Programa de Investigaciones sobre Historia Agraria">
+    <p class="bajada">Facultad de Ciencias Económicas · UBA</p>
+
+    <ul>
+      <li>
+        <a class="enlace destacado" href="../#mapa">
+          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+          <div><strong>Mapa de extranjerización</strong><span>Tierras en manos extranjeras, departamento por departamento</span></div>
+        </a>
+      </li>
+      <li>
+        <a class="enlace" href="../">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <div><strong>Sitio web del PRIHA</strong><span>priha.ar · investigaciones, publicaciones y actividades</span></div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="redes">
+      <a href="https://instagram.com/priha_fce" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram @priha_fce (se abre en una pestaña nueva)</span>
+      </a>
+    </div>
+    <p class="rotulo">@priha_fce</p>
+  </main>
+  <footer>PRIHA · FCE-UBA</footer>
+</body>
+</html>
