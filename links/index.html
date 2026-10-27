@@ -49,18 +49,17 @@
 
     ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.85rem; }
     .enlace {
-      display:flex; align-items:center; gap:1rem; text-align:left;
+      display:flex; align-items:center; justify-content:center; text-align:center;
       padding:1rem 1.15rem; border-radius:.9rem; text-decoration:none;
       background:#fff; color:var(--tinta);
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .enlace:hover, .enlace:focus-visible { transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.25); }
     .enlace:focus-visible { outline:3px solid var(--naranja); outline-offset:3px; }
-    .enlace i { font-size:1.35rem; width:1.75rem; text-align:center; color:var(--ladrillo); flex-shrink:0; }
     .enlace strong { display:block; font-family:'Oswald', 'Arial Narrow', sans-serif; font-weight:500; font-size:1.1rem; letter-spacing:-.01em; }
     .enlace span { display:block; font-size:.85rem; color:rgba(38,36,37,.7); margin-top:.1rem; }
     .enlace.destacado { background:var(--naranja); color:#fff; }
-    .enlace.destacado i, .enlace.destacado span { color:#fff; }
+    .enlace.destacado span { color:#fff; }
     .enlace.destacado strong { font-weight:700; }
 
     .redes { margin-top:2rem; display:flex; justify-content:center; }
@@ -85,13 +84,11 @@
     <ul>
       <li>
         <a class="enlace destacado" href="../">
-          <i class="fa-solid fa-seedling" aria-hidden="true"></i>
           <div><strong>Conocé nuestros proyectos</strong><span>priha.ar · investigaciones, publicaciones y actividades</span></div>
         </a>
       </li>
       <li>
         <a class="enlace" href="https://thomasartopoulos.github.io/mapa_extranjerizacion/">
-          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
           <div><strong>Mapa de extranjerización</strong><span>Tierras en manos extranjeras, departamento por departamento</span></div>
         </a>
       </li>
