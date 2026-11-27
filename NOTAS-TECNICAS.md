@@ -10,6 +10,7 @@ Sitio estático publicado con GitHub Pages desde `main`, carpeta raíz.
 | `404.html` | Página de error que sirve GitHub Pages |
 | `img/` | Logotipos, vista previa y fotos: `equipo/`, `actividades/`, `novedades/` (ver `img/LEEME.md`) |
 | `departamentos.geojson` | Capa de departamentos del Observatorio |
+| `mapa_congreso_tierra_2026/` | Mapa interactivo de organizaciones del congreso (página autónoma en `/mapa_congreso_tierra_2026/`; datos en `data/`) |
 
 | `.nojekyll` | Publica los archivos tal cual, sin pasar por Jekyll |
 | `.gitattributes` | Fuerza finales de línea LF: evita diffs de 2000 líneas desde Windows |
